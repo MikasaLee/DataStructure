@@ -6,7 +6,7 @@
 #define INFEASIBLE -1
 #define OVERFLOW -2
 typedef int Status;
-
+typedef int Bool;
 /**
  *
  * 基本函数(简单的可以直接用类库来表示，复杂的需要动手写)：

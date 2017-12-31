@@ -1,0 +1,24 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ClearList_Sq	SqList.c	/^Status ClearList_Sq(SqList *L){$/;"	f
+DestroyList_Sq	SqList.c	/^Status DestroyList_Sq(SqList *L){$/;"	f
+ElemType	SqList.c	/^typedef int ElemType;		\/\/定义ElemType$/;"	t	file:
+GetElem_Sq	SqList.c	/^Status GetElem_Sq(SqList L,int i,ElemType *e){$/;"	f
+InitList_Sq	SqList.c	/^Status InitList_Sq(SqList *L){$/;"	f
+LIST_INCREMENT	SqList.c	10;"	d	file:
+LIST_INIT_SIZE	SqList.c	9;"	d	file:
+List	SqList.c	/^typedef struct List{$/;"	s	file:
+ListEmpty_Sq	SqList.c	/^Bool  ListEmpty_Sq(SqList L){$/;"	f
+ListInsert_Sq	SqList.c	/^Status ListInsert_Sq(SqList *L,int i,ElemType e){$/;"	f
+ListLength_Sq	SqList.c	/^int ListLength_Sq(SqList L){$/;"	f
+LocateElem_Sq	SqList.c	/^int LocateElem_Sq(SqList L,Elemtype e,Bool (*compare)(Elemtype a,Elemtype b)){$/;"	f
+NextElem_Sq	SqList.c	/^Status NextElem_Sq(SqList L,ElemType cur_e,ElemType *next_e){$/;"	f
+PriorElem_Sq	SqList.c	/^Status PriorElem_Sq(SqList L,ElemType cur_e,ElemType *pre_e){$/;"	f
+SqList	SqList.c	/^}SqList;$/;"	t	typeref:struct:List	file:
+elem	SqList.c	/^	ElemType *elem;		\/\/存储空间基地址$/;"	m	struct:List	file:
+length	SqList.c	/^	int length;		\/\/当前长度$/;"	m	struct:List	file:
+listsize	SqList.c	/^	int listsize;		\/\/当前分配的存储容量，sizeof(ElemType)为单位$/;"	m	struct:List	file:
