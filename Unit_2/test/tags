@@ -4,4 +4,8 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+isLess_Than100	test_SqList.c	/^Bool isLess_Than100(ElemType e){$/;"	f
+main	test_MergeList_Sq.c	/^void main(){$/;"	f
 main	test_SqList.c	/^void main(){$/;"	f
+main	test_union_Sq.c	/^void main(){$/;"	f
+max	test_SqList.c	/^Bool max(ElemType a,ElemType b){$/;"	f

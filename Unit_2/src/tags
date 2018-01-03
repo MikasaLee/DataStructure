@@ -12,13 +12,19 @@ InitList_Sq	SqList.c	/^Status InitList_Sq(SqList *L){$/;"	f
 LIST_INCREMENT	SqList.c	10;"	d	file:
 LIST_INIT_SIZE	SqList.c	9;"	d	file:
 List	SqList.c	/^typedef struct List{$/;"	s	file:
+ListDelete_Sq	SqList.c	/^Status ListDelete_Sq(SqList *L,int i,ElemType *e){$/;"	f
 ListEmpty_Sq	SqList.c	/^Bool  ListEmpty_Sq(SqList L){$/;"	f
 ListInsert_Sq	SqList.c	/^Status ListInsert_Sq(SqList *L,int i,ElemType e){$/;"	f
 ListLength_Sq	SqList.c	/^int ListLength_Sq(SqList L){$/;"	f
-LocateElem_Sq	SqList.c	/^int LocateElem_Sq(SqList L,Elemtype e,Bool (*compare)(Elemtype a,Elemtype b)){$/;"	f
+ListTraverse_Sq	SqList.c	/^Status ListTraverse_Sq(SqList L,Bool visit(ElemType e)){$/;"	f
+LocateElem_Sq	SqList.c	/^int LocateElem_Sq(SqList L,ElemType e,Bool (*compare)(ElemType a,ElemType b)){$/;"	f
+MergeList_Sq	MergeList_Sq.c	/^void MergeList_Sq(SqList a,SqList b,SqList *c){$/;"	f
 NextElem_Sq	SqList.c	/^Status NextElem_Sq(SqList L,ElemType cur_e,ElemType *next_e){$/;"	f
+PrintList_Sq	SqList.c	/^void PrintList_Sq(SqList L){$/;"	f
 PriorElem_Sq	SqList.c	/^Status PriorElem_Sq(SqList L,ElemType cur_e,ElemType *pre_e){$/;"	f
 SqList	SqList.c	/^}SqList;$/;"	t	typeref:struct:List	file:
 elem	SqList.c	/^	ElemType *elem;		\/\/存储空间基地址$/;"	m	struct:List	file:
+equal	union_Sq.c	/^Bool equal(ElemType a,ElemType b){	\/\/判断a与b是否相等，若相等返回TRUE,不相等返回FALSE;$/;"	f
 length	SqList.c	/^	int length;		\/\/当前长度$/;"	m	struct:List	file:
 listsize	SqList.c	/^	int listsize;		\/\/当前分配的存储容量，sizeof(ElemType)为单位$/;"	m	struct:List	file:
+union_Sq	union_Sq.c	/^void union_Sq(SqList *a,SqList b){$/;"	f

@@ -81,7 +81,7 @@ Status GetElem_Sq(SqList L,int i,ElemType *e){
 	return OK;
 }
 
-//根据判断函数得出相应的值
+//根据判断函数，返回符合条件的第一个元素的序列，若没有符合的返回0
 int LocateElem_Sq(SqList L,ElemType e,Bool (*compare)(ElemType a,ElemType b)){
 	int i;
 	for(i=0;i<ListLength_Sq(L);i++){
@@ -144,10 +144,8 @@ Status ListInsert_Sq(SqList *L,int i,ElemType e){
 	//改进：
 		ElemType *newbase;
 		newbase = (ElemType *)realloc(L->elem,(L->listsize+LIST_INCREMENT)*sizeof(SqList));
-		if(!newbase)	//没有分配成功
-			exit(OVERFLOW);
+		if(!newbase)	exit(OVERFLOW);		//没有分配成功
 		L->elem = newbase;
-	
 		L->listsize +=LIST_INCREMENT;
 	}
 
