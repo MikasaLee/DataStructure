@@ -1,4 +1,7 @@
-//以及线性表La和Lb都是非递减有序排列，现要求La,Lb合并为一个新表Lc，且Lc中依然是非递减序列
+/*
+ * 已知线性表La和Lb都是非递减有序排列，
+ * 现要求La,Lb合并为一个新表Lc，且Lc中依然是非递减序列
+ */
 #include "SqList.c"
 void MergeList_Sq(SqList a,SqList b,SqList *c){
 	int p = ListLength_Sq(a),q = ListLength_Sq(b);
