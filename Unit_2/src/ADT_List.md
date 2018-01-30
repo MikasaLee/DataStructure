@@ -30,7 +30,7 @@ ADT List{
 	    操作结果：若cur_e是L的数据元素，且不是第一个，则用pre_e返回它的前驱，否则操作失败，pre_e无定义
 	NextElem(L,cur_e,&next_e)
 	    初始条件：线性表L已存在
-	    操作结果：若cur_e是L的数据元素，且不是最后一个，则用pre_e返回它的后继，否则操作失败，next_e无定义
+	    操作结果：若cur_e是L的数据元素，且不是最后一个，则用next_e返回它的后继，否则操作失败，next_e无定义
 	ListInsert(&L,i,e)
 	    初始条件：线性表L已存在，1 <= i <= ListLength(L) + 1
 	    操作结果：在L中第i个位置之前插入新的数据元素e，L的长度加1

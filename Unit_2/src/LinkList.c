@@ -110,7 +110,6 @@ int LocateElem_L(LinkList L,ElemType e,Bool (*compare)(ElemType a,ElemType b)){
 	}
 	if(p)	return i;	//找见了
 	return 0;
-
 }
 
 //得到数据域是cur_e的前一个数据，赋值给pre_e,若不存在,pre_e = NULL;
