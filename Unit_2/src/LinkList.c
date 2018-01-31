@@ -119,9 +119,19 @@ Status PriorElem_L(LinkList L,ElemType cur_e,ElemType *pre_e){
 		printf("-----该表为空表，操作失败-----\n");
 		return ERROR;
 	}
-	//排除cur_e为第一个节点的数据域
 	p = L -> next;
 	q = p -> next;
+	//排除cur_e为第一个节点的数据域
+	/**
+	 * 2018-1-31更新：在写双向链表的测试函数时，发现一个Bug：
+	 * 如果cur_e = 第一个节点的data = 第二个节点的data. 那么pre_e会指向第一个节点的data
+	 * 但是实际情况应该是说明cur_e为第一个节点的data，不存在前一个节点。
+	 */
+	if(q && (p -> data == q -> data) && (cur_e == p ->data)){
+		printf("\n%d为第一个节点，不存在前一个节点\n",cur_e);
+		pre_e = NULL;
+		return ERROR;
+	}		
 	while(q && q ->data != cur_e){
 		p = q;
 		q = q->next;

@@ -19,6 +19,8 @@ void main(){
 	Print_L(L);
 
 	printf("\n------测试PriorElem_L(*L,e,&pre_e)--------\n");
+	//2018-1-31更新PriorElem_L的一个Bug。如果第一个节点的data = 第二个节点的data = cur_e，会得到错误的结果
+	ListInsert_L(L,1,9);
 	if(PriorElem_L(L,9,&e))		printf("data为9的前一个data为:%d\n",e);
 	else printf("不存在data为9的节点,或者9为第一个节点\n");
 	if(PriorElem_L(L,1000,&e))		printf("data为1000的前一个data为:%d\n",e);

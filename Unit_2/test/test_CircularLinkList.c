@@ -69,8 +69,7 @@ void main(){
 		Print_CL(CL);
 **/
 	printf("\n------------测试DestroyList_CL(CLinkList *CL)函数----------------\n");
-	if(!ListEmpty_CL(CL))
-		DestroyList_CL(&CL);
+	DestroyList_CL(&CL);
 	if(!CL)
 		Print_CL(CL);
 }
