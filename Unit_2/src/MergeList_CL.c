@@ -1,6 +1,7 @@
 /**
  * 循环链表的并操作
- * CLa和CLb是非递减序列，归并CLa和CLb -> CLc,并且废弃CLa和CLb的头结点（并且废弃CLa和CLb的头结点，CLa的头结点由CLc接手且CLa为NULL，CLb的free掉）
+ * CLa和CLb是非递减序列，归并CLa和CLb -> CLc,且CLc依然是非递减序列
+ * 并且废弃CLa和CLb的头结点（并且废弃CLa和CLb的头结点，CLa的头结点由CLc接手且CLa为NULL，CLb的free掉）
  */
 #include "./CircularLinkList.c"
 void MergeList_CL(CLinkList *CLa,CLinkList *CLb,CLinkList *CLc){
