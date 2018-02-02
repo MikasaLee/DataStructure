@@ -3,7 +3,7 @@
  * 同时约定完全用C语言实现（不能用c++的引用）
  */
 #include <stdio.h>
-#include "/home/C/DataStructure/Unit_1/src/myDefine.c"
+#include "../../Unit_1/src/myDefine.c"
 #include <stdlib.h>
 
 typedef int ElemType;
