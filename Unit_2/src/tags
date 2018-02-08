@@ -4,74 +4,168 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+AddNode	Polynomial.c	/^Status AddNode(Polynomial p,float coef,int expn){$/;"	f
+AddPolyn	Polynomial.c	/^Status AddPolyn(Polynomial *Pa,polynomial *Pb){$/;"	f
+AppendSome_EL	ExtendLinkList.c	/^Status AppendSome_EL(ELinkList La,int src,ELinkList Lb,int begin,int end){$/;"	f
+Append_EL	ExtendLinkList.c	/^Status Append_EL(ELinkList La,ELinkList Lb,int begin){$/;"	f
 CLNode	CircularLinkList.c	/^typedef struct CLNode{$/;"	s	file:
 CLNode	CircularLinkList.c	/^}CLNode,*CLinkList;$/;"	t	typeref:struct:CLNode	file:
 CLinkList	CircularLinkList.c	/^}CLNode,*CLinkList;$/;"	t	typeref:struct:CLNode	file:
 ClearList_CL	CircularLinkList.c	/^Status ClearList_CL(CLinkList *CL){$/;"	f
+ClearList_DL	DoubleLinkList.c	/^Status ClearList_DL(DuLinkList *DL){$/;"	f
+ClearList_EL	ExtendLinkList.c	/^Status ClearList_EL(ELinkList *L){$/;"	f
 ClearList_L	LinkList.c	/^Status ClearList_L(LinkList *L){$/;"	f
 ClearList_Sq	SqList.c	/^Status ClearList_Sq(SqList *L){$/;"	f
 CreateList_L	CreateList_L.c	/^Status CreateList_L(LinkList *L,int n){$/;"	f
+CreatePolyn	Polynomial.c	/^Status CreatePolyn(Polynomial *p,int m){$/;"	f
+DelFirst_EL	ExtendLinkList.c	/^Status DelFirst_EL(ELinkList L,Link *q){$/;"	f
 DestroyList_CL	CircularLinkList.c	/^Status DestroyList_CL(CLinkList *CL){$/;"	f
+DestroyList_DL	DoubleLinkList.c	/^Status DestroyList_DL(DuLinkList *DL){$/;"	f
+DestroyList_EL	ExtendLinkList.c	/^Status DestroyList_EL(ELinkList *L){$/;"	f
 DestroyList_L	LinkList.c	/^Status DestroyList_L(LinkList *L){$/;"	f
 DestroyList_Sq	SqList.c	/^Status DestroyList_Sq(SqList *L){$/;"	f
+DestroyPolyn	Polynomial.c	/^Status DestroyPolyn(Polynomial *p){$/;"	f
+DuLNode	DoubleLinkList.c	/^typedef struct DuLNode{$/;"	s	file:
+DuLNode	DoubleLinkList.c	/^}DuLNode,*DuLinkList;$/;"	t	typeref:struct:DuLNode	file:
+DuLinkList	DoubleLinkList.c	/^}DuLNode,*DuLinkList;$/;"	t	typeref:struct:DuLNode	file:
+ELNode	ExtendLinkList.c	/^typedef struct ELNode{		\/\/节点类型$/;"	s	file:
+ELNode	ExtendLinkList.c	/^}ELNode,*Link,*Position;$/;"	t	typeref:struct:ELNode	file:
+ELink	ExtendLinkList.c	/^}ELink,*ELinkList;$/;"	t	typeref:struct:__anon1	file:
+ELinkList	ExtendLinkList.c	/^}ELink,*ELinkList;$/;"	t	typeref:struct:__anon1	file:
 ElemType	CircularLinkList.c	/^typedef int ElemType;$/;"	t	file:
+ElemType	DoubleLinkList.c	/^typedef int ElemType;$/;"	t	file:
+ElemType	ExtendLinkList.c	/^typedef int ElemType;$/;"	t	file:
 ElemType	LinkList.c	/^typedef int ElemType;$/;"	t	file:
+ElemType	Polynomial.c	/^} ElemType,term;$/;"	t	typeref:struct:__anon2	file:
 ElemType	SqList.c	/^typedef int ElemType;		\/\/定义ElemType$/;"	t	file:
+FreeNode_EL	ExtendLinkList.c	/^void FreeNode_EL(Link *L){$/;"	f
+GetCurElem	ExtendLinkList.c	/^ElemType GetCurElem(Link p){$/;"	f
 GetElem_CL	CircularLinkList.c	/^Status GetElem_CL(CLinkList CL,int i,ElemType *e){$/;"	f
+GetElem_DL	DoubleLinkList.c	/^Status GetElem_DL(DuLinkList DL,int i,ElemType *e){$/;"	f
+GetElem_EL	ExtendLinkList.c	/^Status GetElem_EL(ELinkList L,int i,ElemType *e){$/;"	f
 GetElem_L	LinkList.c	/^Status GetElem_L(LinkList L,int i,ElemType *e){$/;"	f
 GetElem_Sq	SqList.c	/^Status GetElem_Sq(SqList L,int i,ElemType *e){$/;"	f
+GetHead_EL	ExtendLinkList.c	/^Position GetHead_EL(ELinkList L){$/;"	f
+GetLast_EL	ExtendLinkList.c	/^Position GetLast_EL(ELinkList L){$/;"	f
 InitList_CL	CircularLinkList.c	/^Status InitList_CL(CLinkList *CL){$/;"	f
+InitList_DL	DoubleLinkList.c	/^Status InitList_DL(DuLinkList *DL){	\/\/规定头结点的data为0,prior为NULL$/;"	f
+InitList_EL	ExtendLinkList.c	/^Status InitList_EL(ELinkList *L){$/;"	f
 InitList_L	LinkList.c	/^Status InitList_L(LinkList *L){$/;"	f
 InitList_Sq	SqList.c	/^Status InitList_Sq(SqList *L){$/;"	f
+InsAfter_EL	ExtendLinkList.c	/^Status InsAfter_EL(ELinkList L,Link *p,Link s){$/;"	f
+InsBefore_EL	ExtendLinkList.c	/^Status InsBefore_EL(ELinkList L,Link *p,Link s){$/;"	f
+InsFirst_EL	ExtendLinkList.c	/^Status InsFirst_EL(ELinkList L,Link s){	$/;"	f
 LIST_INCREMENT	SqList.c	10;"	d	file:
 LIST_INIT_SIZE	SqList.c	9;"	d	file:
 LNode	LinkList.c	/^typedef struct LNode{$/;"	s	file:
 LNode	LinkList.c	/^} LNode,*LinkList;$/;"	t	typeref:struct:LNode	file:
+LNode	Polynomial.c	/^}LNode,*LinkList;$/;"	t	typeref:struct:LinkList	file:
+Link	ExtendLinkList.c	/^}ELNode,*Link,*Position;$/;"	t	typeref:struct:ELNode	file:
 LinkList	LinkList.c	/^} LNode,*LinkList;$/;"	t	typeref:struct:LNode	file:
+LinkList	Polynomial.c	/^typedef struct LinkList{	\/\/多项式的链表$/;"	s	file:
+LinkList	Polynomial.c	/^}LNode,*LinkList;$/;"	t	typeref:struct:LinkList	file:
 List	SqList.c	/^typedef struct List{$/;"	s	file:
 ListDelete_CL	CircularLinkList.c	/^Status ListDelete_CL(CLinkList CL,int i,ElemType *e){$/;"	f
+ListDelete_DL	DoubleLinkList.c	/^Status ListDelete_DL(DuLinkList DL,int i,ElemType *e){$/;"	f
+ListDelete_EL	ExtendLinkList.c	/^Status ListDelete_EL(ELinkList L,int i,Link *e){$/;"	f
 ListDelete_L	LinkList.c	/^Status ListDelete_L(LinkList L,int i,ElemType *e){$/;"	f
 ListDelete_Sq	SqList.c	/^Status ListDelete_Sq(SqList *L,int i,ElemType *e){$/;"	f
 ListEmpty_CL	CircularLinkList.c	/^Bool ListEmpty_CL(CLinkList CL){$/;"	f
+ListEmpty_DL	DoubleLinkList.c	/^Bool ListEmpty_DL(DuLinkList DL){$/;"	f
+ListEmpty_EL	ExtendLinkList.c	/^Bool ListEmpty_EL(ELinkList L){$/;"	f
 ListEmpty_L	LinkList.c	/^Bool ListEmpty_L(LinkList L){$/;"	f
 ListEmpty_Sq	SqList.c	/^Bool  ListEmpty_Sq(SqList L){$/;"	f
+ListInsertELinkList_EL	ExtendLinkList.c	/^Status ListInsertELinkList_EL(ELinkList L1,int i,Link L2_head,Link L2_tail,int k){$/;"	f
+ListInsertElemType_EL	ExtendLinkList.c	/^Status ListInsertElemType_EL(ELinkList L,int i,ElemType e){$/;"	f
 ListInsert_CL	CircularLinkList.c	/^Status ListInsert_CL(CLinkList CL,int i,ElemType e){$/;"	f
+ListInsert_DL	DoubleLinkList.c	/^Status ListInsert_DL(DuLinkList DL,int i,ElemType e){$/;"	f
 ListInsert_L	LinkList.c	/^Status ListInsert_L(LinkList L,int i,ElemType e){$/;"	f
 ListInsert_Sq	SqList.c	/^Status ListInsert_Sq(SqList *L,int i,ElemType e){$/;"	f
 ListLength_CL	CircularLinkList.c	/^int ListLength_CL(CLinkList CL){$/;"	f
+ListLength_DL	DoubleLinkList.c	/^int ListLength_DL(DuLinkList DL){$/;"	f
+ListLength_EL	ExtendLinkList.c	/^int ListLength_EL(ELinkList L){$/;"	f
 ListLength_L	LinkList.c	/^int ListLength_L(LinkList L){$/;"	f
 ListLength_Sq	SqList.c	/^int ListLength_Sq(SqList L){$/;"	f
+ListSearch_EL	ExtendLinkList.c	/^Link ListSearch_EL(ELinkList L,int *begin,int end,ElemType e){$/;"	f
 ListTraverse_CL	CircularLinkList.c	/^Status ListTraverse_CL(CLinkList CL,Bool (*visit)(ElemType)){$/;"	f
+ListTraverse_DL	DoubleLinkList.c	/^Status ListTraverse_DL(DuLinkList DL,Bool (*visit)(ElemType)){$/;"	f
+ListTraverse_EL	ExtendLinkList.c	/^Status ListTraverse_EL(ELinkList L,Bool (*visit)(ElemType)){$/;"	f
 ListTraverse_L	LinkList.c	/^Status ListTraverse_L(LinkList L,Bool visit(ElemType e)){$/;"	f
 ListTraverse_Sq	SqList.c	/^Status ListTraverse_Sq(SqList L,Bool visit(ElemType e)){$/;"	f
 LocateElem_CL	CircularLinkList.c	/^int LocateElem_CL(CLinkList CL,ElemType e,Bool (*compare)(ElemType ,ElemType)){$/;"	f
+LocateElem_DL	DoubleLinkList.c	/^int LocateElem_DL(DuLinkList DL,ElemType e,Bool (*compare)(ElemType,ElemType)){$/;"	f
+LocateElem_EL	ExtendLinkList.c	/^Position LocateElem_EL(ELinkList L,ElemType e,Bool (*compare)(ElemType,ElemType)){$/;"	f
 LocateElem_L	LinkList.c	/^int LocateElem_L(LinkList L,ElemType e,Bool (*compare)(ElemType a,ElemType b)){$/;"	f
 LocateElem_Sq	SqList.c	/^int LocateElem_Sq(SqList L,ElemType e,Bool (*compare)(ElemType a,ElemType b)){$/;"	f
+LocatePos_EL	ExtendLinkList.c	/^Status LocatePos_EL(ELinkList L,int i,Link *e){$/;"	f
+MakeNode_EL	ExtendLinkList.c	/^Status MakeNode_EL(Link *L,ElemType e){$/;"	f
+MergeList_CL	MergeList_CL.c	/^void MergeList_CL(CLinkList *CLa,CLinkList *CLb,CLinkList *CLc){$/;"	f
+MergeList_DL	MergeList_DL.c	/^void MergeList_DL(DuLinkList *DLa,DuLinkList *DLb,DuLinkList *DLc){$/;"	f
 MergeList_L	MergeList_L.c	/^void MergeList_L(LinkList *La,LinkList *Lb,LinkList *Lc){		\/\/需要将原来的La，Lb改动（废除他们的头结点，并且将实参的La,Lb为NULL，所以这里应该传入'引用'，即LinkList *La(而不是LinkList La)）$/;"	f
 MergeList_Sq	MergeList_Sq.c	/^void MergeList_Sq(SqList a,SqList b,SqList *c){$/;"	f
+MultiplyPolyn	Polynomial.c	/^Status MultiplyPolyn(polynomial *Pa,polynomial *Pb){$/;"	f
 NextElem_CL	CircularLinkList.c	/^Status NextElem_CL(CLinkList CL,ElemType cur_e,ElemType *next_e){$/;"	f
+NextElem_DL	DoubleLinkList.c	/^Status NextElem_DL(DuLinkList DL,ElemType cur_e,ElemType *next_e){$/;"	f
 NextElem_L	LinkList.c	/^Status NextElem_L(LinkList L,ElemType cur_e,ElemType *next_e){$/;"	f
 NextElem_Sq	SqList.c	/^Status NextElem_Sq(SqList L,ElemType cur_e,ElemType *next_e){$/;"	f
+NextPos	ExtendLinkList.c	/^Position NextPos(Link p){$/;"	f
+PolynLength	Polynomial.c	/^int PolynLength(polynomial p){$/;"	f
+Polynomial	Polynomial.c	/^}poly, *Polynomial,*polynomial;$/;"	t	typeref:struct:polynomial	file:
+Position	ExtendLinkList.c	/^}ELNode,*Link,*Position;$/;"	t	typeref:struct:ELNode	file:
 PrintList_Sq	SqList.c	/^void PrintList_Sq(SqList L){$/;"	f
+PrintPolyn	Polynomial.c	/^void PrintPolyn(Polynomial p){$/;"	f
 Print_CL	CircularLinkList.c	/^void Print_CL(CLinkList CL){$/;"	f
+Print_DL	DoubleLinkList.c	/^void Print_DL(DuLinkList DL){$/;"	f
+Print_EL	ExtendLinkList.c	/^void Print_EL(ELinkList L){$/;"	f
 Print_L	LinkList.c	/^void Print_L(LinkList L){$/;"	f
 PriorElem_CL	CircularLinkList.c	/^Status PriorElem_CL(CLinkList CL,ElemType cur_e,ElemType *pre_e){$/;"	f
+PriorElem_DL	DoubleLinkList.c	/^Status PriorElem_DL(DuLinkList DL,ElemType cur_e,ElemType *pre_e){$/;"	f
 PriorElem_L	LinkList.c	/^Status PriorElem_L(LinkList L,ElemType cur_e,ElemType *pre_e){$/;"	f
 PriorElem_Sq	SqList.c	/^Status PriorElem_Sq(SqList L,ElemType cur_e,ElemType *pre_e){$/;"	f
+PriorPos	ExtendLinkList.c	/^Position PriorPos(Link p){$/;"	f
+Remove	ExtendLinkList.c	/^Status Remove(ELinkList L,Link *p){$/;"	f
+SetCurElem	ExtendLinkList.c	/^Status SetCurElem(Link p,ElemType e){$/;"	f
 SqList	SqList.c	/^}SqList;$/;"	t	typeref:struct:List	file:
+SubtractPolyn	Polynomial.c	/^Status SubtractPolyn(Polynomial *Pa,polynomial *Pb){$/;"	f
+Union_CL	Union_CL.c	/^void Union_CL(CLinkList *CLa,CLinkList *CLb){$/;"	f
+Union_DL	Union_DL.c	/^void Union_DL(DuLinkList *DLa,DuLinkList *DLb){$/;"	f
 Union_L	Union_L.c	/^void Union_L(LinkList *La,LinkList *Lb){$/;"	f
 Union_Sq	Union_Sq.c	/^void Union_Sq(SqList *a,SqList b){$/;"	f
+coef	Polynomial.c	/^	float coef;	\/\/指数$/;"	m	struct:__anon2	file:
 data	CircularLinkList.c	/^	ElemType data;$/;"	m	struct:CLNode	file:
+data	DoubleLinkList.c	/^	ElemType data;$/;"	m	struct:DuLNode	file:
+data	ExtendLinkList.c	/^	ElemType data;$/;"	m	struct:ELNode	file:
 data	LinkList.c	/^	ElemType data;$/;"	m	struct:LNode	file:
+data	Polynomial.c	/^	ElemType data;$/;"	m	struct:LinkList	file:
 elem	SqList.c	/^	ElemType *elem;		\/\/存储空间基地址$/;"	m	struct:List	file:
 equal	Union_Sq.c	/^Bool equal(ElemType a,ElemType b){	\/\/判断a与b是否相等，若相等返回TRUE,不相等返回FALSE;$/;"	f
 equals	CircularLinkList.c	/^Bool equals(ElemType a,ElemType b){$/;"	f
+equals	DoubleLinkList.c	/^Bool equals(ElemType a,ElemType b){$/;"	f
+equals	ExtendLinkList.c	/^Bool equals(ElemType a,ElemType b){$/;"	f
 equals	LinkList.c	/^Bool equals(ElemType a,ElemType b){$/;"	f
+expn	Polynomial.c	/^	int expn;	\/\/系数$/;"	m	struct:__anon2	file:
+head	ExtendLinkList.c	/^	Link head,tail;		\/\/分别指向头结点和尾节点	注意头结点现在和普通节点一样，也可以存放数据$/;"	m	struct:__anon1	file:
+head	Polynomial.c	/^	LinkList head;$/;"	m	struct:polynomial	file:
+infinitesimal	Polynomial.c	10;"	d	file:
+length	ExtendLinkList.c	/^	int length;		\/\/链表当前节点的个数$/;"	m	struct:__anon1	file:
+length	Polynomial.c	/^	int length;		$/;"	m	struct:polynomial	file:
 length	SqList.c	/^	int length;		\/\/当前长度$/;"	m	struct:List	file:
 listsize	SqList.c	/^	int listsize;		\/\/当前分配的存储容量，sizeof(ElemType)为单位$/;"	m	struct:List	file:
 max	CircularLinkList.c	/^Bool max(ElemType a,ElemType b){$/;"	f
 max	LinkList.c	/^Bool max(ElemType a,ElemType b){$/;"	f
 next	CircularLinkList.c	/^	struct CLNode *next;$/;"	m	struct:CLNode	typeref:struct:CLNode::CLNode	file:
+next	DoubleLinkList.c	/^	struct DuLNode * next;		\/\/指向后一个节点$/;"	m	struct:DuLNode	typeref:struct:DuLNode::DuLNode	file:
+next	ExtendLinkList.c	/^	struct ELNode *next;$/;"	m	struct:ELNode	typeref:struct:ELNode::ELNode	file:
 next	LinkList.c	/^	struct LNode * next;$/;"	m	struct:LNode	typeref:struct:LNode::LNode	file:
+next	Polynomial.c	/^	struct LinkList* next;$/;"	m	struct:LinkList	typeref:struct:LinkList::LinkList	file:
+poly	Polynomial.c	/^}poly, *Polynomial,*polynomial;$/;"	t	typeref:struct:polynomial	file:
+polynomial	Polynomial.c	/^typedef struct polynomial{	\/\/链表的头结点。$/;"	s	file:
+polynomial	Polynomial.c	/^}poly, *Polynomial,*polynomial;$/;"	t	typeref:struct:polynomial	file:
+prior	DoubleLinkList.c	/^	struct DuLNode * prior;		\/\/指向前一个节点$/;"	m	struct:DuLNode	typeref:struct:DuLNode::DuLNode	file:
+prior	ExtendLinkList.c	/^	struct ELNode *prior;$/;"	m	struct:ELNode	typeref:struct:ELNode::ELNode	file:
+tail	ExtendLinkList.c	/^	Link head,tail;		\/\/分别指向头结点和尾节点	注意头结点现在和普通节点一样，也可以存放数据$/;"	m	struct:__anon1	file:
+term	Polynomial.c	/^} ElemType,term;$/;"	t	typeref:struct:__anon2	file:
 visit	CircularLinkList.c	/^Bool visit(ElemType e){$/;"	f
+visit	DoubleLinkList.c	/^Bool visit(ElemType e){$/;"	f
+visit	ExtendLinkList.c	/^Bool visit(ElemType e){$/;"	f
 visit	LinkList.c	/^Bool visit(ElemType e){$/;"	f

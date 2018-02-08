@@ -4,13 +4,21 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.8	//
+Print_ELNode	test_ExtendLinkList.c	/^void Print_ELNode(Link L){$/;"	f
 isLess_Than100	test_SqList.c	/^Bool isLess_Than100(ElemType e){$/;"	f
 main	test_CircularLinkList.c	/^void main(){$/;"	f
 main	test_CreateList_L.c	/^void main(){$/;"	f
+main	test_DuLinkList.c	/^void main(){$/;"	f
+main	test_ExtendLinkList.c	/^void main(){$/;"	f
 main	test_LinkList.c	/^void main(){$/;"	f
+main	test_MergeList_CL.c	/^void main(){$/;"	f
+main	test_MergeList_DL.c	/^void main(){$/;"	f
 main	test_MergeList_L.c	/^void main(){$/;"	f
 main	test_MergeList_Sq.c	/^void main(){$/;"	f
+main	test_Polynomial.c	/^void main(){$/;"	f
 main	test_SqList.c	/^void main(){$/;"	f
+main	test_Union_CL.c	/^void main(){$/;"	f
+main	test_Union_DL.c	/^void main(){$/;"	f
 main	test_Union_L.c	/^void main(){$/;"	f
 main	test_Union_Sq.c	/^void main(){$/;"	f
 max	test_SqList.c	/^Bool max(ElemType a,ElemType b){$/;"	f
