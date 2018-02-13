@@ -188,7 +188,7 @@ Status ListInsert_L(LinkList L,int i,ElemType e){
 	p ->next = q;
 	(L -> data)++;		//别忘了有规定当ElemType为int/long时，head节点的数据域为节点个数
 	return OK;
-}
+}//时间复杂度为O(n),n = i < ListLength_L(L);
 
 Status ListDelete_L(LinkList L,int i,ElemType *e){
 	LinkList p,q;
@@ -211,7 +211,7 @@ Status ListDelete_L(LinkList L,int i,ElemType *e){
 	(*e) = q ->data;
 	free(q);
 	return OK;
-}
+}//时间复杂度为O(n),n = i < ListLength_L(L);
 //---------------------
 //visit()
 Bool visit(ElemType e){
