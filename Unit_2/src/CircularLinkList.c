@@ -3,7 +3,7 @@
  * 主要实现与单链表基本一致，但最主要的不同是判断链表结束由p/p->next为空改成了p/p->next是否指向头结点
  */
 #include "stdio.h"
-#include "/home/C/DataStructure/Unit_1/src/myDefine.c"
+#include "../../Unit_1/src/myDefine.c"
 #include "stdlib.h"
 
 typedef int ElemType;
