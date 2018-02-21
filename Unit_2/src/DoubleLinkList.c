@@ -264,6 +264,6 @@ void Print_DL(DuLinkList DL){
 		return;
 	}
 	
-	printf("\n该循环链表为空链表\n");
+	printf("\n该双向链表为空链表\n");
 	return;
 }
