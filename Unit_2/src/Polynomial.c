@@ -10,8 +10,8 @@
 #define infinitesimal 1e-6
 
 typedef struct {		//每一项的表示
-	float coef;	//指数
-	int expn;	//系数
+	float coef;	//系数
+	int expn;	//指数
 } ElemType,term;
 
 typedef struct LinkList{	//多项式的链表

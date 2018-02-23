@@ -1,0 +1,17 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+arrsize	hw_1_19.c	9;"	d	file:
+main	hw_1_16.c	/^void main(){$/;"	f
+main	hw_1_17.c	/^void main(){$/;"	f
+main	hw_1_19.c	/^void main(){$/;"	f
+main	hw_1_20.c	/^void main(){$/;"	f
+myCalculate	hw_1_19.c	/^void myCalculate(int *a,int n,int maxint){$/;"	f
+myCalculate	hw_1_20.c	/^double myCalculate(double x,polynomial p){	\/\/将x带入一元多项式p中计算结果$/;"	f
+myExponential	hw_1_19.c	/^int myExponential(int x,int y){	\/\/x表示底数，y表示幂次(本题不涉及幂次小于0)$/;"	f
+myFibonacci	hw_1_17.c	/^int myFibonacci(int k,int m){$/;"	f
+myPrint	hw_1_16.c	/^void myPrint(int x,int y,int z){$/;"	f
+myRecursion	hw_1_19.c	/^int myRecursion(int x){$/;"	f

@@ -1,0 +1,130 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CreateList	hw_2_37.c	/^void CreateList(testList *L,ElemType *e,int length){$/;"	f
+CreateList	hw_2_38.c	/^void CreateList(testList *L,ElemType *e,int length){$/;"	f
+CreateList_temp	hw_2_32.c	/^Status CreateList_temp(LinkList_temp *L,int n,ElemType e[]){  \/\/直接搞出一个满足题意的循环链表,要求L指向为NULL$/;"	f
+CreateTemp_L	hw_2_33.c	/^Status CreateTemp_L(temp_Link *L,int n,ElemType e[]){$/;"	f
+Create_NHCL	hw_2_31.c	/^Status Create_NHCL(NoHead_CL *L,int n,ElemType e[]){	\/\/直接搞出一个满足题意的循环链表,要求L指向为NULL$/;"	f
+Create_NHCL	hw_2_33.c	/^Status Create_NHCL(NoHead_CL *L,int n,ElemType e[]){	\/\/直接搞出一个满足题意的循环链表,要求L指向为NULL$/;"	f
+DeleteAndInsertSub	hw_2_16.c	/^Status DeleteAndInsertSub(LinkList *la,LinkList *lb,int i,int j,int len){$/;"	f
+DeleteK	hw_2_10.c	/^Status DeleteK(SqList *a,int i,int k){$/;"	f
+ElemType	XorLinkedList.c	/^typedef char ElemType;$/;"	t	file:
+ElemType	hw_2_31.c	/^typedef int ElemType;$/;"	t	file:
+ElemType	hw_2_32.c	/^typedef int ElemType;$/;"	t	file:
+ElemType	hw_2_33.c	/^typedef char ElemType;$/;"	t	file:
+ElemType	hw_2_37.c	/^typedef char ElemType;$/;"	t	file:
+ElemType	hw_2_38.c	/^typedef char ElemType;$/;"	t	file:
+InitList_Xor	XorLinkedList.c	/^Status InitList_Xor(XorLinkList *Xor){$/;"	f
+LOCATE_2_38	hw_2_38.c	/^testList LOCATE_2_38(testList *L,ElemType x){$/;"	f
+LRPtr	XorLinkedList.c	/^	struct XorNode *LRPtr;$/;"	m	struct:XorNode	typeref:struct:XorNode::XorNode	file:
+Left	XorLinkedList.c	/^	XorPointer Left, Right;	\/\/分别指向链表的左端和右端$/;"	m	struct:__anon1	file:
+Length_temp	hw_2_32.c	/^int Length_temp(LinkList_temp L){$/;"	f
+LinkList_temp	hw_2_32.c	/^}List_2_32,*LinkList_temp;$/;"	t	typeref:struct:List_2_32	file:
+ListDelete_Xor	XorLinkedList.c	/^Status ListDelete_Xor(XorLinkList Xor,int i){	\/\/删除第i个节点$/;"	f
+ListInsert_Xor	XorLinkedList.c	/^Status ListInsert_Xor(XorLinkList Xor,int i,ElemType e){$/;"	f
+ListLength_DL	hw_2_37.c	/^int ListLength_DL(testList L){$/;"	f
+ListLength_DL	hw_2_38.c	/^int ListLength_DL(testList L){$/;"	f
+ListLength_L	test_NoHeadLinkList.c	/^int ListLength_L(LinkList L){$/;"	f
+ListLength_Xor	XorLinkedList.c	/^int ListLength_Xor(XorLinkList Xor){$/;"	f
+List_2_32	hw_2_32.c	/^typedef struct List_2_32{$/;"	s	file:
+List_2_32	hw_2_32.c	/^}List_2_32,*LinkList_temp;$/;"	t	typeref:struct:List_2_32	file:
+NoHead_CL	hw_2_31.c	/^}NoHead_CLNode,*NoHead_CL;$/;"	t	typeref:struct:NoHead_CLNode	file:
+NoHead_CL	hw_2_33.c	/^}NoHead_CLNode,*NoHead_CL;$/;"	t	typeref:struct:NoHead_CLNode	file:
+NoHead_CLNode	hw_2_31.c	/^typedef struct NoHead_CLNode{$/;"	s	file:
+NoHead_CLNode	hw_2_31.c	/^}NoHead_CLNode,*NoHead_CL;$/;"	t	typeref:struct:NoHead_CLNode	file:
+NoHead_CLNode	hw_2_33.c	/^typedef struct NoHead_CLNode{			\/\/借助hw_2_31的循环链表$/;"	s	file:
+NoHead_CLNode	hw_2_33.c	/^}NoHead_CLNode,*NoHead_CL;$/;"	t	typeref:struct:NoHead_CLNode	file:
+Print	hw_2_31.c	/^void Print(NoHead_CL L){$/;"	f
+Print	hw_2_32.c	/^void Print(LinkList_temp L){$/;"	f
+Print	hw_2_33.c	/^void Print(NoHead_CL L){$/;"	f
+Print	hw_2_37.c	/^void Print(testList DL){$/;"	f
+Print	hw_2_38.c	/^void Print(testList DL){$/;"	f
+PrintList	XorLinkedList.c	/^void PrintList(XorPointer Xor){$/;"	f
+Print_L	hw_2_33.c	/^void Print_L(temp_Link L){$/;"	f
+Print_L	test_NoHeadLinkList.c	/^void Print_L(LinkList L){$/;"	f
+Right	XorLinkedList.c	/^	XorPointer Left, Right;	\/\/分别指向链表的左端和右端$/;"	m	struct:__anon1	file:
+ShowList	XorLinkedList.c	/^void ShowList(XorLinkList Xor,int direct){	\/\/direct为方向 0为从左，非0从右$/;"	f
+XorLinkList	XorLinkedList.c	/^}XorLinkedList,*XorLinkList;$/;"	t	typeref:struct:__anon1	file:
+XorLinkedList	XorLinkedList.c	/^}XorLinkedList,*XorLinkList;$/;"	t	typeref:struct:__anon1	file:
+XorNode	XorLinkedList.c	/^typedef struct XorNode{$/;"	s	file:
+XorNode	XorLinkedList.c	/^}XorNode, *XorPointer;$/;"	t	typeref:struct:XorNode	file:
+XorP	XorLinkedList.c	/^XorPointer XorP(XorPointer p, XorPointer q){ \/\/指针异或函数XorP返回指针p和q的异或(XOR)值$/;"	f
+XorPointer	XorLinkedList.c	/^}XorNode, *XorPointer;$/;"	t	typeref:struct:XorNode	file:
+data	XorLinkedList.c	/^	ElemType data;$/;"	m	struct:XorNode	file:
+data	hw_2_31.c	/^	ElemType data;$/;"	m	struct:NoHead_CLNode	file:
+data	hw_2_32.c	/^	ElemType data;$/;"	m	struct:List_2_32	file:
+data	hw_2_33.c	/^	ElemType data;$/;"	m	struct:NoHead_CLNode	file:
+data	hw_2_33.c	/^	ElemType data;$/;"	m	struct:temp_List	file:
+data	hw_2_37.c	/^	ElemType data;$/;"	m	struct:test_link	file:
+data	hw_2_38.c	/^	ElemType data;$/;"	m	struct:test_link	file:
+equals	hw_2_29.c	/^Bool equals(ElemType a,ElemType b){$/;"	f
+freq	hw_2_38.c	/^	int freq;$/;"	m	struct:test_link	file:
+hw_2_11	hw_2_11.c	/^Status hw_2_11(SqList *a,ElemType x){$/;"	f
+hw_2_12	hw_2_12.c	/^int hw_2_12(SqList a,SqList b){$/;"	f
+hw_2_15	hw_2_15.c	/^Status hw_2_15(LinkList ha,LinkList hb,LinkList *hc){$/;"	f
+hw_2_17	hw_2_17.c	/^Status hw_2_17(LinkList *L,int i,ElemType b){	\/\/没有头结点的话不好判断L到底是空节点还是空指针，所以改一下规定：当i>ListLength_L(*L)时,b插在L表的最后$/;"	f
+hw_2_18	hw_2_18.c	/^Status hw_2_18(LinkList *L,int i){$/;"	f
+hw_2_19	hw_2_19.c	/^void hw_2_19(LinkList L,ElemType mink,ElemType maxk){$/;"	f
+hw_2_20	hw_2_20.c	/^void hw_2_20(LinkList L){$/;"	f
+hw_2_21	hw_2_21.c	/^void hw_2_21(SqList L){$/;"	f
+hw_2_22	hw_2_22.c	/^void hw_2_22(LinkList L){$/;"	f
+hw_2_23	hw_2_23.c	/^void hw_2_23(LinkList *A,LinkList *B,LinkList *C){	\/\/废除A，B表$/;"	f
+hw_2_24	hw_2_24.c	/^void hw_2_24(LinkList *A,LinkList *B,LinkList *C){$/;"	f
+hw_2_25	hw_2_25.c	/^void hw_2_25(SqList A,SqList B,SqList *C){$/;"	f
+hw_2_26	hw_2_26.c	/^void hw_2_26(LinkList A,LinkList B,LinkList *C){$/;"	f
+hw_2_27	hw_2_27.c	/^void hw_2_27(SqList A,SqList B,SqList *C){$/;"	f
+hw_2_29	hw_2_29.c	/^void hw_2_29(SqList *A,SqList B,SqList C){$/;"	f
+hw_2_30	hw_2_30.c	/^void hw_2_30(LinkList A,LinkList B,LinkList C){$/;"	f
+hw_2_31	hw_2_31.c	/^void hw_2_31(NoHead_CL L){$/;"	f
+hw_2_32	hw_2_32.c	/^Status hw_2_32(LinkList_temp L){$/;"	f
+hw_2_33	hw_2_33.c	/^void hw_2_33(temp_Link L,int n,NoHead_CL *L_char,NoHead_CL *L_number,NoHead_CL *L_other){	\/\/n为temp_Link的长度，不想写ListLength了，直接这样偷懒。。$/;"	f
+hw_2_37	hw_2_37.c	/^void hw_2_37(testList L){$/;"	f
+hw_2_41	hw_2_41.c	/^void hw_2_41(Polynomial L){$/;"	f
+hw_2_42	hw_2_42.c	/^void hw_2_42(Polynomial *L,Polynomial *L_odd,Polynomial *L_even){$/;"	f
+main	XorLinkedList.c	/^void main(){$/;"	f
+main	hw_2_10.c	/^void main(){$/;"	f
+main	hw_2_11.c	/^void main(){$/;"	f
+main	hw_2_12.c	/^void main(){$/;"	f
+main	hw_2_15.c	/^void main(){$/;"	f
+main	hw_2_19.c	/^void main(){$/;"	f
+main	hw_2_20.c	/^void main(){$/;"	f
+main	hw_2_21.c	/^void main(){$/;"	f
+main	hw_2_22.c	/^void main(){$/;"	f
+main	hw_2_23.c	/^void main(){$/;"	f
+main	hw_2_24.c	/^void main(){$/;"	f
+main	hw_2_25.c	/^void main(){$/;"	f
+main	hw_2_26.c	/^void main(){$/;"	f
+main	hw_2_27.c	/^void main(){$/;"	f
+main	hw_2_29.c	/^void main(){$/;"	f
+main	hw_2_30.c	/^void main(){$/;"	f
+main	hw_2_31.c	/^void main(){$/;"	f
+main	hw_2_32.c	/^void main(){$/;"	f
+main	hw_2_33.c	/^void main(){$/;"	f
+main	hw_2_37.c	/^void main(){$/;"	f
+main	hw_2_38.c	/^void main(){$/;"	f
+main	hw_2_41.c	/^void main(){$/;"	f
+main	hw_2_42.c	/^void main(){$/;"	f
+main	test_NoHeadLinkList.c	/^void main(){$/;"	f
+min	hw_2_27.c	/^Bool min(ElemType a,ElemType b){$/;"	f
+next	hw_2_31.c	/^	struct NoHead_CLNode *next;$/;"	m	struct:NoHead_CLNode	typeref:struct:NoHead_CLNode::NoHead_CLNode	file:
+next	hw_2_32.c	/^	struct List_2_32 *next;$/;"	m	struct:List_2_32	typeref:struct:List_2_32::List_2_32	file:
+next	hw_2_33.c	/^	struct NoHead_CLNode *next;$/;"	m	struct:NoHead_CLNode	typeref:struct:NoHead_CLNode::NoHead_CLNode	file:
+next	hw_2_33.c	/^	struct temp_List *next;$/;"	m	struct:temp_List	typeref:struct:temp_List::temp_List	file:
+next	hw_2_37.c	/^	struct test_link *next;$/;"	m	struct:test_link	typeref:struct:test_link::test_link	file:
+next	hw_2_38.c	/^	struct test_link *next;$/;"	m	struct:test_link	typeref:struct:test_link::test_link	file:
+prior	hw_2_32.c	/^	struct List_2_32 *prior;$/;"	m	struct:List_2_32	typeref:struct:List_2_32::List_2_32	file:
+prior	hw_2_37.c	/^	struct test_link *prior;$/;"	m	struct:test_link	typeref:struct:test_link::test_link	file:
+prior	hw_2_38.c	/^	struct test_link *prior;$/;"	m	struct:test_link	typeref:struct:test_link::test_link	file:
+temp_Link	hw_2_33.c	/^}temp_List,*temp_Link;$/;"	t	typeref:struct:temp_List	file:
+temp_List	hw_2_33.c	/^typedef struct temp_List{			\/\/临时定义线性链表$/;"	s	file:
+temp_List	hw_2_33.c	/^}temp_List,*temp_Link;$/;"	t	typeref:struct:temp_List	file:
+testLink	hw_2_37.c	/^}testLink,*testList;$/;"	t	typeref:struct:test_link	file:
+testLink	hw_2_38.c	/^}testLink,*testList;$/;"	t	typeref:struct:test_link	file:
+testList	hw_2_37.c	/^}testLink,*testList;$/;"	t	typeref:struct:test_link	file:
+testList	hw_2_38.c	/^}testLink,*testList;$/;"	t	typeref:struct:test_link	file:
+test_link	hw_2_37.c	/^typedef struct test_link{$/;"	s	file:
+test_link	hw_2_38.c	/^typedef struct test_link{$/;"	s	file:

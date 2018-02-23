@@ -131,7 +131,7 @@ Union_CL	Union_CL.c	/^void Union_CL(CLinkList *CLa,CLinkList *CLb){$/;"	f
 Union_DL	Union_DL.c	/^void Union_DL(DuLinkList *DLa,DuLinkList *DLb){$/;"	f
 Union_L	Union_L.c	/^void Union_L(LinkList *La,LinkList *Lb){$/;"	f
 Union_Sq	Union_Sq.c	/^void Union_Sq(SqList *a,SqList b){$/;"	f
-coef	Polynomial.c	/^	float coef;	\/\/指数$/;"	m	struct:__anon2	file:
+coef	Polynomial.c	/^	float coef;	\/\/系数$/;"	m	struct:__anon2	file:
 data	CircularLinkList.c	/^	ElemType data;$/;"	m	struct:CLNode	file:
 data	DoubleLinkList.c	/^	ElemType data;$/;"	m	struct:DuLNode	file:
 data	ExtendLinkList.c	/^	ElemType data;$/;"	m	struct:ELNode	file:
@@ -143,7 +143,7 @@ equals	CircularLinkList.c	/^Bool equals(ElemType a,ElemType b){$/;"	f
 equals	DoubleLinkList.c	/^Bool equals(ElemType a,ElemType b){$/;"	f
 equals	ExtendLinkList.c	/^Bool equals(ElemType a,ElemType b){$/;"	f
 equals	LinkList.c	/^Bool equals(ElemType a,ElemType b){$/;"	f
-expn	Polynomial.c	/^	int expn;	\/\/系数$/;"	m	struct:__anon2	file:
+expn	Polynomial.c	/^	int expn;	\/\/指数$/;"	m	struct:__anon2	file:
 head	ExtendLinkList.c	/^	Link head,tail;		\/\/分别指向头结点和尾节点	注意头结点现在和普通节点一样，也可以存放数据$/;"	m	struct:__anon1	file:
 head	Polynomial.c	/^	LinkList head;$/;"	m	struct:polynomial	file:
 infinitesimal	Polynomial.c	10;"	d	file:
