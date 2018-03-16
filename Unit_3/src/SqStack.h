@@ -12,7 +12,7 @@
 #define STACK_INIT_SIZE 10
 #define STACKINCREMENT 5
 
-#ifndef TEST_C
+#if (!defined TEST_C) && (!defined CONVERSION_C)
 typedef char ElemType;
 #endif
 

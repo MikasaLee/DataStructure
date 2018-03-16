@@ -30,14 +30,13 @@ Status DestroyStack_Sq(SqStack_L *S){
 
 Status ClearStack_Sq(SqStack_L S){
 	if(!S)	exit(OVERFLOW);
-	free(S->base);
-	S -> base = S -> top = NULL;
+	S -> base = S -> top;
 	return OK;
 }
 
 Bool StackEmpty_Sq(SqStack_L S){
 	if(!S)	exit(OVERFLOW);
-	return (S -> top - S -> base) == 0?TRUE:FALSE;
+	return ((S -> top - S -> base) == 0)?TRUE:FALSE;
 }
 
 int StackLength_Sq(SqStack_L S){
