@@ -12,7 +12,8 @@
 #define STACK_INIT_SIZE 10
 #define STACKINCREMENT 5
 
-#if (!defined TEST_C) && (!defined CONVERSION_C)
+/* 在SqStack的测试2文件，数值转换文件，迷宫求解中需要重新定义ElemType*/
+#if (!defined TEST_C) && (!defined CONVERSION_C) && (!defined MAZEPATH_H)
 typedef char ElemType;
 #endif
 
