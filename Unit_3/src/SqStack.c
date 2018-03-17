@@ -55,7 +55,7 @@ Status GetTop_Sq(SqStack_L S,ElemType *e){
 Status Push_Sq(SqStack_L S,ElemType e){
 	if(!S)	exit(OVERFLOW);
 	if(S -> top - S -> base == S -> capacity){	//扩容
-		S -> base = realloc(S -> base,(S ->capacity)+STACKINCREMENT);
+		S -> base = realloc(S -> base,((S ->capacity)+STACKINCREMENT)*sizeof(ElemType));
 		S -> top = S -> base + S -> capacity;
 		S -> capacity +=STACKINCREMENT;
 	}
