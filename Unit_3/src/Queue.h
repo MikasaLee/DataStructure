@@ -1,5 +1,5 @@
 /**
- * 队列(Queue)的头文件
+ * 链式存储队列(Queue)的头文件
  */
 
 #ifndef QUEUE_H 
@@ -9,9 +9,7 @@
 #include "stdlib.h"
 #include "../../Unit_1/src/myDefine.c"
 
-//#if !define  //模版准备好
 typedef char ElemType;
-//#endif
 
 typedef struct node{
 	ElemType data;	//数据域
@@ -26,9 +24,9 @@ typedef struct{
 Status InitQueue(Queue *q);		//构造一个空队列
 Status DestroyQueue(Queue *q);		//销毁一个队列
 Status ClearQueue(Queue q);		//清空一个队列
-Status QueueEmpty(Queue q);		//若队列为空队列，则返回TRUE，否则返回FALSE
+Bool QueueEmpty(Queue q);		//若队列为空队列，则返回TRUE，否则返回FALSE
 int QueueLength(Queue q);		//返回队列Q的元素个数，即为队列的长度
-Status GetHead(Queue q,Node *node);	//若队列不为空，则用e返回Q的队头元素，并返回OK；否则返回ERROR
+Status GetHead(Queue q,ElemType *node);	//若队列不为空，则用e返回Q的队头元素，并返回OK；否则返回ERROR
 Status EnQueue(Queue q,ElemType e);	//插入元素e为Q的新的队尾元素
 Status DeQueue(Queue q,ElemType *e);	//删除Q的队头元素，用e返回其值，并返回OK；否则返回ERROR
 Status QueueTraverse(Queue q,Bool visit(ElemType));	//用visit遍历队列Q的所有元素，若有一个返回FALSE，则返回FALSE；否则返回TRUE
