@@ -10,7 +10,10 @@
 #include "stdlib.h"
 #include "../../Unit_1/src/myDefine.c"
 
+//银行模拟业务中需要重新定义ElemType
+#if (!defined BANK_SIMULATION_H)
 typedef char ElemType;
+#endif
 
 #define MAX_SIZE 10
 typedef struct{
