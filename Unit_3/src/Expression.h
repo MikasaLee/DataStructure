@@ -13,10 +13,10 @@ typedef struct opt{
 	float opnd;		//数字
 
 }opt,*ElemType;
-#include "SqStack.c"	//借用此文件来检查括号是否匹配的问题
+#include "SqStack.c"
 
 float operator(float num1 ,char oper,float num2);
 float Expression();
-float evaluate(ElemType *sub);
+float evaluate(ElemType *sub);	//计算子表达式的值
 void reverse(ElemType *s);
 #endif

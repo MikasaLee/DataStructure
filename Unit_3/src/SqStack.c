@@ -46,7 +46,7 @@ int StackLength_Sq(SqStack_L S){
 
 Status GetTop_Sq(SqStack_L S,ElemType *e){
 	if(!(S))	exit(OVERFLOW);
-	if(S -> top == S -> base) return ERROR;
+	if(S -> top == S -> base){return ERROR;}
 	ElemType *p = (S -> top) -1;
 	(*e) = (*p);
 	return OK;

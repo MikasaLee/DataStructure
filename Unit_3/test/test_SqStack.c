@@ -15,8 +15,11 @@ int main(int argc,char **args){
 		printf("\n");
 		printf("%c",e);	
 		printf("\n");
-		for(i=0;i<10;i++)
+		for(i=0;i<10;i++){
 			Pop_Sq(S,&e);
+			printf("%c ",e);
+			printf("栈顶地址：%d",S -> top);
+		}
 		printf("length=%d \n",StackLength_Sq(S));
 		StackTraverse_Sq(S,visit);
 		if(StackEmpty_Sq(S))	printf("栈为空");
