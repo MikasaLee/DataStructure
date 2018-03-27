@@ -10,8 +10,8 @@
 #include "stdlib.h"
 #include "../../Unit_1/src/myDefine.c"
 
-//银行模拟业务中需要重新定义ElemType
-#if (!defined BANK_SIMULATION_H)
+//银行模拟业务,习题hw_3_33.c中中需要重新定义ElemType
+#if (!defined BANK_SIMULATION_H) && (!defined HW_3_33_C)
 typedef char ElemType;
 #endif
 

@@ -4,12 +4,13 @@
 
 #ifndef QUEUE_H 
 #define QUEUE_H
-
 #include "stdio.h"
 #include "stdlib.h"
 #include "../../Unit_1/src/myDefine.c"
 
+#if (!defined HW_3_31_C)	//hw_3_31需要使用栈和队列
 typedef char ElemType;
+#endif
 
 typedef struct node{
 	ElemType data;	//数据域

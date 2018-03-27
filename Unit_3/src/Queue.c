@@ -111,7 +111,7 @@ Status QueueTraverse(Queue q,Bool visit(ElemType)){
 	return TRUE;
 }
 
-Bool visit(ElemType e){
+Bool visit1(ElemType e){
 	printf("%c ",e);
 	return TRUE;
 }
