@@ -1,7 +1,7 @@
 /**
  * 3.22 如题3.21的假设条件，试写一个算法，对以逆波兰式表示的表达式求值。
  */
-
+#define HW_3_22_C
 #include "hw_3_21.c"
 float answer(char *str);
 float calculate(float num1,char optr,float num2);

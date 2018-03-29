@@ -84,10 +84,10 @@ int operatorLevel(SqStack_L OPTR,char opt,char *RPN,int j){
 	}
 	exit(OVERFLOW);
 }
-/**
-//3.22 和3.23需要用到此文件
+
+#if (!defined HW_3_22_C) &&(!defined HW_3_23_C)
 int main(int argc,char **args){
 	char *p = toRPN();
 	printf("\n%s\n",p);
 }
-**/
+#endif
