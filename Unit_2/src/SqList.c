@@ -1,21 +1,8 @@
-/**
- * 线性表的顺序表示和实现
- * 同时约定完全用C语言实现（不能用c++的引用）
- */
-#include <stdio.h>
-#include "/home/C/DataStructure/Unit_1/src/myDefine.c"
-#include <stdlib.h>
+#ifndef SQLIST_C
+#define SQLIST_C
 
-#define LIST_INIT_SIZE 5 	//线性表存储空间的起始分配量
-#define LIST_INCREMENT 10 	//线性表存储空间的分配增量
-typedef int ElemType;		//定义ElemType
-typedef struct List{
-	ElemType *elem;		//存储空间基地址
-	int length;		//当前长度
-	int listsize;		//当前分配的存储容量，sizeof(ElemType)为单位
-}SqList;
+#include "SqList.h"
 
-//初始化线性表，成功返回1，失败返回0
 Status InitList_Sq(SqList *L){
 	//对线性表进行初始化
 	L->elem = (ElemType *)malloc(LIST_INIT_SIZE*sizeof(ElemType));	
@@ -29,7 +16,6 @@ Status InitList_Sq(SqList *L){
 	return OK;
 }//InitList_Sq
 
-//销毁线性表
 Status DestroyList_Sq(SqList *L){
 	if(!L){
 		printf("WARNNING:线性表不存在\n");
@@ -44,7 +30,6 @@ Status DestroyList_Sq(SqList *L){
 	
 }//DestroyList_Sq
 
-//将线性表清空
 Status ClearList_Sq(SqList *L){
 	if(!L){
 		printf("ERROR:线性表不存在\n");
@@ -56,12 +41,10 @@ Status ClearList_Sq(SqList *L){
 	return OK;
 }
 
-//判断线性表是否为空，是返回TRUE，否则返回FALSE
 Bool  ListEmpty_Sq(SqList L){
 	return ListLength_Sq(L)?FALSE:TRUE;
 }
 
-//得到线性表的元素的个数
 int ListLength_Sq(SqList L){
 	if(!(L.elem)){
 		printf("WARNNING：线性表为空\n");
@@ -71,7 +54,6 @@ int ListLength_Sq(SqList L){
 	return L.length;
 }
 
-//得到线性表第i个元素的值,并将其赋予e
 Status GetElem_Sq(SqList L,int i,ElemType *e){
 	if(i < 1 || i > ListLength_Sq(L)){
 		printf("ERROR:不存在第%d个元素",i);
@@ -81,7 +63,6 @@ Status GetElem_Sq(SqList L,int i,ElemType *e){
 	return OK;
 }
 
-//根据判断函数，返回符合条件的第一个元素的序列，若没有符合的返回0
 int LocateElem_Sq(SqList L,ElemType e,Bool (*compare)(ElemType a,ElemType b)){
 	int i;
 	for(i=0;i<ListLength_Sq(L);i++){
@@ -92,7 +73,6 @@ int LocateElem_Sq(SqList L,ElemType e,Bool (*compare)(ElemType a,ElemType b)){
 	return 0;
 }
 
-//得到前驱
 Status PriorElem_Sq(SqList L,ElemType cur_e,ElemType *pre_e){
 	int i;
 	if(L.elem == NULL || L.length ==0){
@@ -110,7 +90,6 @@ Status PriorElem_Sq(SqList L,ElemType cur_e,ElemType *pre_e){
 	return ERROR;
 }
 
-//得到后继
 Status NextElem_Sq(SqList L,ElemType cur_e,ElemType *next_e){
 	int i;
 	if(L.elem == NULL || L.length ==0){
@@ -128,7 +107,6 @@ Status NextElem_Sq(SqList L,ElemType cur_e,ElemType *next_e){
 	return ERROR;
 }
 
-//插入操作
 Status ListInsert_Sq(SqList *L,int i,ElemType e){
 	
 	if(i<1 || i>ListLength_Sq(*L)+1){
@@ -172,7 +150,6 @@ Status ListInsert_Sq(SqList *L,int i,ElemType e){
 	}
 	return ERROR;
 }
-//删除操作
 Status ListDelete_Sq(SqList *L,int i,ElemType *e){
 	if(i<1 || i>ListLength_Sq(*L)){
 		printf("ERROR:不存在第%d个元素，删除失败\n",i);
@@ -187,7 +164,6 @@ Status ListDelete_Sq(SqList *L,int i,ElemType *e){
 	return OK;
 }
 
-//输出线性表L的所有信息
 void PrintList_Sq(SqList L){
 	int i;
 	printf("\n该线性表的元素个数为：%d,\n该线性表的当前容量为：%d,\n",L.length,L.listsize);
@@ -207,3 +183,5 @@ Status ListTraverse_Sq(SqList L,Bool visit(ElemType e)){
 	return OK;
 
 }
+
+#endif

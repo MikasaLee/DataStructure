@@ -1,21 +1,11 @@
 /**
  * 双向链表的实现
  */
-#include <stdio.h>
-#include "/home/C/DataStructure/Unit_1/src/myDefine.c"
-#include <stdlib.h>
+#ifndef DOUBLELINKLIST_c
+#define DOUBLELINKLIST_c
 
-typedef int ElemType;
-typedef struct DuLNode{
-	//数据域：
-	ElemType data;
-	//指针域：
-	struct DuLNode * prior;		//指向前一个节点
-	struct DuLNode * next;		//指向后一个节点
+#include "DoubleLinkList.h"
 
-}DuLNode,*DuLinkList;
-
-//构造双向链表
 Status InitList_DL(DuLinkList *DL){	//规定头结点的data为0,prior为NULL
 	(*DL) = (DuLinkList)malloc(sizeof(DuLNode));
 	if(!(*DL))	exit(OVERFLOW);
@@ -267,3 +257,4 @@ void Print_DL(DuLinkList DL){
 	printf("\n该双向链表为空链表\n");
 	return;
 }
+#endif

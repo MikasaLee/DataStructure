@@ -1,8 +1,7 @@
 /**
  * 算法2.11：逆位序输入n个元素的值，建立一个从表尾到表头的线性链表
  */
-#include "stdio.h"
-#include "./LinkList.c"
+#include "LinkList.c"
 
 Status CreateList_L(LinkList *L,int n){
 	//L为指向线性链表的指针，n为输入的n个元素

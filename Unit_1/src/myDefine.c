@@ -1,3 +1,7 @@
+#ifndef MYDEFINE_H
+#define MYDEFINE_H
+#endif
+
 #include "stdio.h"
 #define TRUE 1
 #define FALSE 0
@@ -8,7 +12,6 @@
 typedef int Status;
 typedef int Bool;
 /**
- *
  * 基本函数(简单的可以直接用类库来表示，复杂的需要动手写)：
  * 求最大值：max(表达式1, ...，表达式n)
  * 求最小值：min(表达式1,...., 表达式n)

@@ -1,4 +1,4 @@
-#include "/home/C/DataStructure/Unit_2/src/SqList.c"
+#include "../src/SqList.c"
 Bool max(ElemType a,ElemType b){
 	return a<b?TRUE:FALSE;
 }
