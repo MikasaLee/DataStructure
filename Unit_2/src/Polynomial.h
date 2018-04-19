@@ -15,7 +15,7 @@
 typedef struct {		//每一项的表示
 	float coef;	//系数
 	int expn;	//指数
-} ElemType,term;
+}ElemType,term;
 
 typedef struct LinkList{	//多项式的链表
 	//数据域
