@@ -1,7 +1,3 @@
-/**
- * 循环链表的实现
- * 主要实现与单链表基本一致，但最主要的不同是判断链表结束由p/p->next为空改成了p/p->next是否指向头结点
- */
 #ifndef CIRCULARLINKLIST_C
 #define CIRCULARLINKLIST_C
 

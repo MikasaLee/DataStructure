@@ -1,30 +1,8 @@
-/**
- * 扩展版本的线性表，书上p37页对应着相关的定义
- * 扩展版本的线性表分为两部分，链表类型和节点类型，链表类型中定义着该链表的一些基本信息,可以在一定程度上减小了普通链表类型的缺点
- */
-#include "stdio.h"
-#include "../../Unit_1/src/myDefine.c"
-#include "stdlib.h"
+#ifndef EXTENDLINKLIST_C
+#define EXTENDLINKLIST_C
 
-typedef int ElemType;
-typedef struct ELNode{		//节点类型
-	//数据域
-	ElemType data;
-	//指针域
-	struct ELNode *next;
-	struct ELNode *prior;
-}ELNode,*Link,*Position;
+#include "ExtendLinkList.h"
 
-typedef struct{			//链表类型
-	Link head,tail;		//分别指向头结点和尾节点	注意头结点现在和普通节点一样，也可以存放数据
-	int length;		//链表当前节点的个数
-}ELink,*ELinkList;
-
-
-void Print_EL(ELinkList);
-
-
-//创建一个节点,data为e,并且返回给L
 Status MakeNode_EL(Link *L,ElemType e){
 	(*L)  = (Link)malloc(sizeof(ELNode));
 	if(!(*L)){
@@ -37,14 +15,12 @@ Status MakeNode_EL(Link *L,ElemType e){
 	return OK;
 }
 
-//释放L所指向的节点
 void FreeNode_EL(Link *L){
 	Link p = *L;
 	free(p);
 	(*L) = NULL;
 }
 
-//构造一个空的扩展线性链表
 Status InitList_EL(ELinkList *L){
 	(*L) = (ELinkList)malloc(sizeof(ELink));
 	if(!(*L)){
@@ -57,7 +33,6 @@ Status InitList_EL(ELinkList *L){
 	return OK;
 }
 
-//销毁一个扩展线性链表
 Status DestroyList_EL(ELinkList *L){
 	ELinkList p = *L;
 	Link q;
@@ -77,7 +52,6 @@ Status DestroyList_EL(ELinkList *L){
 	return ERROR;
 }
 
-//清空操作
 Status ClearList_EL(ELinkList *L){
 	ELinkList p = (*L);
 	Link q;
@@ -105,7 +79,6 @@ int ListLength_EL(ELinkList L){
 	return L -> length;
 }
 
-//判断是否为空链表
 Bool ListEmpty_EL(ELinkList L){
 	if(!L){
 		printf("\n链表不存在！\n");
@@ -117,7 +90,6 @@ Bool ListEmpty_EL(ELinkList L){
 	return FALSE;
 }
 
-//返回链表中头节点的指针
 Position GetHead_EL(ELinkList L){
 	if(!L){
 		printf("\n链表不存在！\n");
@@ -125,7 +97,7 @@ Position GetHead_EL(ELinkList L){
 	}
 	return L?L->head:NULL;
 }
-//返回链表中最后一个节点的指针
+
 Position GetLast_EL(ELinkList L){
 	if(!L){
 		printf("\n链表不存在！\n");
@@ -134,8 +106,6 @@ Position GetLast_EL(ELinkList L){
 	return L?L->tail:NULL;
 }
 
-//ListInsert方法，书上没有要求，但是很多方法都是基于ListInsert实现的。
-//同时实现两个ListInsert方法，一个是可以实现插入ElemType,而另一个是两个链表的连接操作
 Status ListInsertElemType_EL(ELinkList L,int i,ElemType e){
 	Link p,q;
 	int j = 0;
@@ -184,9 +154,6 @@ Status ListInsertElemType_EL(ELinkList L,int i,ElemType e){
 	return ERROR;
 }
 
-//私有方法。
-//将节点L2中的一部分节点[L2_head,L2_tail]插入到L1的第i个位置(！！！！注意是插入，不是复制！！！) 
-//k = L2_tail - L2_head + 1.
 Status ListInsertELinkList_EL(ELinkList L1,int i,Link L2_head,Link L2_tail,int k){
 	Link p;
 	int j = 0;
@@ -232,7 +199,6 @@ Status ListInsertELinkList_EL(ELinkList L1,int i,Link L2_head,Link L2_tail,int k
 	return ERROR;
 }
 
-//ListDelete方法
 Status ListDelete_EL(ELinkList L,int i,Link *e){
 	int j = 0;
 	Link p;
@@ -273,7 +239,6 @@ Status ListDelete_EL(ELinkList L,int i,Link *e){
 	return ERROR;
 }
 
-//查找的方法：范围是(begin,end]
 Link ListSearch_EL(ELinkList L,int *begin,int end,ElemType e){
 	Link p;
 	int j = 1;
@@ -303,9 +268,6 @@ Link ListSearch_EL(ELinkList L,int *begin,int end,ElemType e){
 	return NULL;
 }
 
-
-
-//返回p指示线性链表L中第i个节点的位置并返回ok
 Status LocatePos_EL(ELinkList L,int i,Link *e){
 	int j = 0;
 	Link p;
@@ -332,7 +294,6 @@ Status LocatePos_EL(ELinkList L,int i,Link *e){
 	return ERROR;
 }
 
-//GetElem方法，和LocatePos的不同只是返回的是Link的data。
 Status GetElem_EL(ELinkList L,int i,ElemType *e){
 	Link p;
 	if(LocatePos_EL(L,i,&p)){
@@ -342,18 +303,14 @@ Status GetElem_EL(ELinkList L,int i,ElemType *e){
 	printf("\nGet方法失败!\n");
 }
 
-
-//在第一个位置上插入节点s	
 Status InsFirst_EL(ELinkList L,Link s){	
 	return ListInsertElemType_EL(L,1,s->data);
 }
 
-//删除第一个位置上的节点，并且返回给q
 Status DelFirst_EL(ELinkList L,Link *q){
 	return ListDelete_EL(L,1,q);
 }
 
-//将链表Lb的一部分链接到La的第i个节点上
 Status AppendSome_EL(ELinkList La,int src,ELinkList Lb,int begin,int end){
 	Link p,q;
 	if(begin <= end){
@@ -363,17 +320,14 @@ Status AppendSome_EL(ELinkList La,int src,ELinkList Lb,int begin,int end){
 	}
 }
 
-//将链表Lb的剩余部分连接到La上
 Status Append_EL(ELinkList La,ELinkList Lb,int begin){
 	return AppendSome_EL(La,ListLength_EL(La)+1,Lb,begin,ListLength_EL(Lb));
 }
 
-//删除线性链表中L的尾节点并以p返回
 Status Remove(ELinkList L,Link *p){
 	return ListDelete_EL(L,ListLength_EL(L),p);
 }
 
-//已知p指向线性表L中的一个节点，将s所指节点插入在p所指的节点之前，//并修改指针p指向新插入的节点
 Status InsBefore_EL(ELinkList L,Link *p,Link s){
 	Link q = NULL;
 	int i = 1;
@@ -400,7 +354,6 @@ Status InsAfter_EL(ELinkList L,Link *p,Link s){
 	}
 }
 
-//setget方法：已知p为线性表中的一个节点，更新/得到其data
 Status SetCurElem(Link p,ElemType e){
 	p -> data = e;
 	return OK;
@@ -410,7 +363,6 @@ ElemType GetCurElem(Link p){
 	return p -> data;
 }
 
-//已知p指向线性链表L的一个节点，返回p所指节点的直接前驱的位置
 Position PriorPos(Link p){
 	return p -> prior;
 }
@@ -420,7 +372,6 @@ Position NextPos(Link p){
 }
 
 
-//用于测试LocateElem的equals
 Bool equals(ElemType a,ElemType b){
 	return a == b?TRUE:FALSE;
 }
@@ -477,3 +428,4 @@ void Print_EL(ELinkList L){
 	printf("\n该扩展链表为空链表\n");
 	return;
 }
+#endif

@@ -1,6 +1,3 @@
-/**
- * 双向链表的实现
- */
 #ifndef DOUBLELINKLIST_c
 #define DOUBLELINKLIST_c
 

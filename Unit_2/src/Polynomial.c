@@ -1,37 +1,8 @@
-/**
- * 一元多项式的实现。课本2.4
- */
+#ifndef POLYNOMIAL_C
+#define POLYNOMIAL_C
 
-#include <stdio.h>
-#include "../../Unit_1/src/myDefine.c"
-#include <stdlib.h>
-#include <math.h>
-//float不能比较是否相等，只能取近似值
-#define infinitesimal 1e-6
+#include "Polynomial.h"
 
-typedef struct {		//每一项的表示
-	float coef;	//系数
-	int expn;	//指数
-} ElemType,term;
-
-typedef struct LinkList{	//多项式的链表
-	//数据域
-	ElemType data;
-
-	//指针域
-	struct LinkList* next;
-}LNode,*LinkList;
-
-typedef struct polynomial{	//链表的头结点。
-	//一元多项式
-	LinkList head;
-
-	//当前该一元多项式的长度
-	int length;		
-}poly, *Polynomial,*polynomial;
-
-Status AddNode(Polynomial,float,int);
-//输入m项的系数和指数，建立一元多项式P
 Status CreatePolyn(Polynomial *p,int m){
 	int i;
 	if(m < 0){
@@ -60,7 +31,6 @@ Status CreatePolyn(Polynomial *p,int m){
 	return ERROR;
 }
 
-//销毁一元线性表p
 Status DestroyPolyn(Polynomial *p){
 	if(!(*p)) return OK;
 	LinkList L = (*p) -> head;
@@ -77,8 +47,7 @@ Status DestroyPolyn(Polynomial *p){
 	printf("\n销毁一元多项式操作失败：项数没有全部释放掉！\n");
 	return ERROR;
 }
-int PolynLength(polynomial);
-//打印输出一元多项式P
+
 void PrintPolyn(Polynomial p){
 	if(!p){
 		printf("\n打印一元多项式失败：不存在此一元多项式\n");
@@ -107,7 +76,6 @@ int PolynLength(polynomial p){
 	return -1;
 }
 
-//往一元多项式中加一项
 Status AddNode(Polynomial p,float coef,int expn){
 	LinkList L,q,head;
 	if(!p){
@@ -310,7 +278,6 @@ Status SubtractPolyn(Polynomial *Pa,polynomial *Pb){
 	printf("\n作差失败！\n");
 }
 
-//一元多项式相乘
 Status MultiplyPolyn(polynomial *Pa,polynomial *Pb){
 	polynomial Pc,temp;
 	LinkList pa,pb;
@@ -423,3 +390,4 @@ Status SimplesetPolyn(Polynomial p){
 }
 
 **/
+#endif
