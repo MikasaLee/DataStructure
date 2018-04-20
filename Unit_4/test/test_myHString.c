@@ -30,10 +30,10 @@ int main(int argc,char **args){
 	if(StrEmpty(str1))	PrintString(str1);
 
 	printf("\n--------------测试StrCompare(HString str1,HString str2);-------------------\n");
-	chars1="b";
-	chars2="a";
+	chars1="aa";
+	chars2="aaa";
 	if(StrAssign(&str1,chars1) && StrAssign(&str2,chars2)){
-		if(StrCompare(str1,str2) == 1){
+		if(StrCompare(str1,str2) > 0){
 			printf("%s > %s\n",chars1,chars2);
 		}else if(StrCompare(str1,str2) == 0){
 			printf("%s = %s\n",chars1,chars2);

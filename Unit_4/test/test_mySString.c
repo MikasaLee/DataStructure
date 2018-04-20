@@ -24,6 +24,7 @@ int main(int argc,char **args){
 	StrAssign(str1,chars1);
 	chars2 = "a";
 	StrAssign(str2,chars2);
+	/**
 	switch(StrCompare(str1,str2)){
 		case 1 : printf("%s > %s\n",chars1,chars2);
 			 break;
@@ -31,6 +32,12 @@ int main(int argc,char **args){
 			 break;
 		case 0 : printf("%s == %s\n",chars1,chars2);
 	}
+	**/
+	if(StrCompare(str1,str2) > 0){
+		printf("%s > %s\n",chars1,chars2);
+	}else if(StrCompare(str1,str2) == 0){
+		printf("%s = %s\n",chars1,chars2);
+	}else printf("%s < %s\n",chars1,chars2);
 
 	printf("\n---------测试Concat(SString T,SString S1,SString S2)函数------------\n");
 	PrintString(str1);

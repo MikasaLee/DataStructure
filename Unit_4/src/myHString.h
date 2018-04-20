@@ -23,7 +23,7 @@ Status StrAssign(HString *str,char* chars);	//生成一个值为chars的串T。
 Status StrCopy(HString *str,HString s);		//由串s复制得串str
 
 Bool StrEmpty(HString str);			//str是否为空
-int StrCompare(HString str1,HString str2);	//比较str1和str2的大小，大于返回1等于返回0小于返回-1
+int StrCompare(HString str1,HString str2);	//比较str1和str2的大小，大于返回正数等于返回0小于返回负数
 int StrLength(HString str);			//得到str的长度
 Status ClearString(HString str);		//将s清为空串
 Status Concat(HString *T,HString S1,HString S2);	//用T返回由S1和S2连接而成的新子串

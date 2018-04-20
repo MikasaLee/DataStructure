@@ -64,12 +64,10 @@ int StrCompare(HString str1,HString str2){
 	if(!str1 || !str2) exit(OVERFLOW);
 	i = 0;
 	while(i<(str1 -> size)&& i<(str2 -> size)){
-		if(str1 -> Base[i] != str2 -> Base[i])	return str1 -> Base[i] > str2 -> Base[i]?1:-1;
+		if(str1 -> Base[i] != str2 -> Base[i])	return str1 -> Base[i] - str2 -> Base[i];
 		i++;
 	}
-	if(str1 -> size == str2 -> size)	return 0;
-	else if(i != str1 -> size) return 1;
-	else return -1;
+	return str1 -> size - str2 -> size;
 }
 
 int StrLength(HString str){
@@ -113,6 +111,8 @@ Status SubString(HString *sub,HString S,int pos,int len){ //范围为[pos,pos+le
 	}
 	/**
 	 * len + pos > S -> size ? len = S -> size - pos : ; 		??不对
+	 * 三目运算符： 表达式1？表达式2：表达式3
+	 * 	表达式为赋值语句右边(言外之意就是表达式不能有等于号)
 	 */
 	len = len > S -> size + 1 - pos ? S->size + 1 - pos : len;
 
@@ -126,7 +126,8 @@ Status SubString(HString *sub,HString S,int pos,int len){ //范围为[pos,pos+le
 	}
 	return ERROR;
 }
-
+#ifndef INDEX_C
+#define INDEX_C
 int Index(HString S,HString T,int pos){
 	int i;
 	HString temp;
@@ -140,7 +141,7 @@ int Index(HString S,HString T,int pos){
 	DestroyString(&temp);
 	return -1;
 }
-
+#endif
 Status Replace(HString *S,HString T,HString V){
 	int i = 0;
 	HString begin,end;

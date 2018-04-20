@@ -34,12 +34,10 @@ Bool StrEmpty(SString str){
 int StrCompare(SString str1,SString str2){
 	int i=1;
 	while(i <= str1[0] && i<= str2[0]){
-		if(str1[i] != str2[i])	return str1[i]>str2[i]?1:-1;
+		if(str1[i] != str2[i])	return str1[i] - str2[i];
 		i++;
 	}
-	if(i == str1[0] && i == str2[0]) return 0;
-	else if(i == str1[0])	return -1;
-	else return 1;
+	return str1[i] - str2[i];
 }
 
 int StrLength(SString str){
