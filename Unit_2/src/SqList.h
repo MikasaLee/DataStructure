@@ -25,14 +25,14 @@ typedef struct List{
 	ElemType *elem;		//存储空间基地址
 	int length;		//当前长度
 	int listsize;		//当前分配的存储容量，sizeof(ElemType)为单位
-}SqList;
+}sqList,*SqList;
 
 //初始化线性表，成功返回1，失败返回0
 Status InitList_Sq(SqList *L);
 //销毁线性表
 Status DestroyList_Sq(SqList *L);
 //将线性表清空
-Status ClearList_Sq(SqList *L);
+Status ClearList_Sq(SqList L);
 //判断线性表是否为空，是返回TRUE，否则返回FALSE
 Bool  ListEmpty_Sq(SqList L);
 //得到线性表第i个元素的值,并将其赋予e
@@ -44,9 +44,9 @@ Status PriorElem_Sq(SqList L,ElemType cur_e,ElemType *pre_e);
 //得到后继
 Status NextElem_Sq(SqList L,ElemType cur_e,ElemType *next_e);
 //插入操作
-Status ListInsert_Sq(SqList *L,int i,ElemType e);
+Status ListInsert_Sq(SqList L,int i,ElemType e);
 //删除操作
-Status ListDelete_Sq(SqList *L,int i,ElemType *e);
+Status ListDelete_Sq(SqList L,int i,ElemType *e);
 //输出线性表L的所有信息
 void PrintList_Sq(SqList L);
 //遍历线性表

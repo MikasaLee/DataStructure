@@ -4,39 +4,38 @@
 #include "SqList.h"
 
 Status InitList_Sq(SqList *L){
-	//对线性表进行初始化
-	L->elem = (ElemType *)malloc(LIST_INIT_SIZE*sizeof(ElemType));	
-	if(!(L->elem)){
-		printf("ERROR:分配空间失败\n");	
-		//return ERROR;		//这里最好还是直接退出程序把.
-		exit(OVERFLOW);
+	(*L) = (sqList *)malloc(sizeof(sqList));
+	if(*L){
+		//对线性表进行初始化
+		(*L)->elem = (ElemType *)malloc(LIST_INIT_SIZE*sizeof(ElemType));	
+		if(!((*L)->elem)){
+			printf("ERROR:分配空间失败\n");	
+			return ERROR;
+		}
+		(*L)->length = 0;
+		(*L)->listsize = LIST_INIT_SIZE;
+		return OK;
 	}
-	L->length = 0;
-	L->listsize = LIST_INIT_SIZE;
-	return OK;
+	return ERROR;
 }//InitList_Sq
 
 Status DestroyList_Sq(SqList *L){
-	if(!L){
+	if(!(*L)){
 		printf("WARNNING:线性表不存在\n");
 		return OK;
 	}
-
-	free(L->elem);				//free()函数只是释放内存，并不会把指针置为NULL
-	L->elem = NULL;
-	L->length = L->listsize = 0;
-
+	free((*L)->elem);				//free()函数只是释放内存，并不会把指针置为NULL
+	free(*L);
+	(*L) = NULL;
 	return OK;
 	
 }//DestroyList_Sq
 
-Status ClearList_Sq(SqList *L){
+Status ClearList_Sq(SqList L){
 	if(!L){
 		printf("ERROR:线性表不存在\n");
 		return ERROR;
 	}
-	free(L->elem);
-	L->elem = NULL;
 	L->length = 0;
 	return OK;
 }
@@ -46,12 +45,12 @@ Bool  ListEmpty_Sq(SqList L){
 }
 
 int ListLength_Sq(SqList L){
-	if(!(L.elem)){
+	if(!(L -> elem)){
 		printf("WARNNING：线性表为空\n");
 		return 0;
 	}
 		
-	return L.length;
+	return L -> length;
 }
 
 Status GetElem_Sq(SqList L,int i,ElemType *e){
@@ -59,14 +58,14 @@ Status GetElem_Sq(SqList L,int i,ElemType *e){
 		printf("ERROR:不存在第%d个元素",i);
 		return ERROR;
 	}
-	(*e) = L.elem[i-1];
+	(*e) = L -> elem[i-1];
 	return OK;
 }
 
 int LocateElem_Sq(SqList L,ElemType e,Bool (*compare)(ElemType a,ElemType b)){
 	int i;
 	for(i=0;i<ListLength_Sq(L);i++){
-		if(compare(e,L.elem[i])){
+		if(compare(e,L -> elem[i])){
 			return i + 1;
 		}
 	}
@@ -75,13 +74,13 @@ int LocateElem_Sq(SqList L,ElemType e,Bool (*compare)(ElemType a,ElemType b)){
 
 Status PriorElem_Sq(SqList L,ElemType cur_e,ElemType *pre_e){
 	int i;
-	if(L.elem == NULL || L.length ==0){
+	if(L -> elem == NULL || L -> length ==0){
 		printf("ERROR:线性表为空");
 		return ERROR;
 	}
 	for(i=1;i<ListLength_Sq(L);i++){
-		if(cur_e == L.elem[i]){
-			(*pre_e) = L.elem[i-1];
+		if(cur_e == L -> elem[i]){
+			(*pre_e) = L -> elem[i-1];
 			return OK;
 		}
 	}
@@ -92,13 +91,13 @@ Status PriorElem_Sq(SqList L,ElemType cur_e,ElemType *pre_e){
 
 Status NextElem_Sq(SqList L,ElemType cur_e,ElemType *next_e){
 	int i;
-	if(L.elem == NULL || L.length ==0){
+	if(L -> elem == NULL || L -> length ==0){
 		printf("ERROR:线性表为空");
 		return ERROR;
 	}
 	for(i=0;i<ListLength_Sq(L)-1;i++){
-		if(cur_e == L.elem[i]){
-			(*next_e) = L.elem[i+1];
+		if(cur_e == L -> elem[i]){
+			(*next_e) = L -> elem[i+1];
 			return OK;
 		}
 	}
@@ -107,9 +106,9 @@ Status NextElem_Sq(SqList L,ElemType cur_e,ElemType *next_e){
 	return ERROR;
 }
 
-Status ListInsert_Sq(SqList *L,int i,ElemType e){
+Status ListInsert_Sq(SqList L,int i,ElemType e){
 	
-	if(i<1 || i>ListLength_Sq(*L)+1){
+	if(i<1 || i>ListLength_Sq(L)+1){
 		printf("ERROR:不能往第%d个位置插入\n",i);
 		return ERROR;
 	}
@@ -121,7 +120,7 @@ Status ListInsert_Sq(SqList *L,int i,ElemType e){
 	*/
 	//改进：
 		ElemType *newbase;
-		newbase = (ElemType *)realloc(L->elem,(L->listsize+LIST_INCREMENT)*sizeof(SqList));
+		newbase = (ElemType *)realloc(L->elem,(L->listsize+LIST_INCREMENT)*sizeof(ElemType));
 		if(!newbase)	exit(OVERFLOW);		//没有分配成功
 		L->elem = newbase;
 		L->listsize +=LIST_INCREMENT;
@@ -150,8 +149,8 @@ Status ListInsert_Sq(SqList *L,int i,ElemType e){
 	}
 	return ERROR;
 }
-Status ListDelete_Sq(SqList *L,int i,ElemType *e){
-	if(i<1 || i>ListLength_Sq(*L)){
+Status ListDelete_Sq(SqList L,int i,ElemType *e){
+	if(i<1 || i>ListLength_Sq(L)){
 		printf("ERROR:不存在第%d个元素，删除失败\n",i);
 		return ERROR;
 	}
@@ -166,18 +165,18 @@ Status ListDelete_Sq(SqList *L,int i,ElemType *e){
 
 void PrintList_Sq(SqList L){
 	int i;
-	printf("\n该线性表的元素个数为：%d,\n该线性表的当前容量为：%d,\n",L.length,L.listsize);
+	printf("\n该线性表的元素个数为：%d,\n该线性表的当前容量为：%d,\n",L -> length,L -> listsize);
 	printf("元素分别为：[");
-	for(i=0;i<L.length;i++)
-		printf("%d ",L.elem[i]);
-	printf("____%d ",L.elem[i]);		//再输出L->elem[L->length]的值（当然实际上该值是无效的），用以判断
+	for(i=0;i<L -> length;i++)
+		printf("%d ",L -> elem[i]);
+	printf("____%d ",L -> elem[i]);		//再输出L->elem[L->length]的值（当然实际上该值是无效的），用以判断
 	printf("]\n");
 }
 
 Status ListTraverse_Sq(SqList L,Bool visit(ElemType e)){
 	int i;
 	for(i=0;i<ListLength_Sq(L);i++){
-		if(!visit(L.elem[i]))		//只要有一个元素调用失败，就ERROR
+		if(!visit(L -> elem[i]))		//只要有一个元素调用失败，就ERROR
 			return ERROR;
 	}
 	return OK;

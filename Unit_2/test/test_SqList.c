@@ -24,32 +24,32 @@ void main(){
 		printf("初始化线性表失败\n");
 
 	//测试ListInsert_Sq(&L,i,e)
-	printf("\n-------测试ListInsert_Sq(&L,i,e)----------\n");
+	printf("\n-------测试ListInsert_Sq(L,i,e)----------\n");
 	for(i = -10 ; i< 10 ;i++){
-		ListInsert_Sq(&L,1,i);		//逆序插入
+		ListInsert_Sq(L,1,i);		//逆序插入
 	}
 	for(i = 1 ; i< 4 ;i++){
-		ListInsert_Sq(&L,i,i*123-89);		//往开始端插入
+		ListInsert_Sq(L,i,i*123-89);		//往开始端插入
 	}
-	ListInsert_Sq(&L,ListLength_Sq(L)+1,i*123-89);		//往最后插入,插入的位置为：在第二个参数的位置之前。也就是数组下标为[第二个参数的值减-1]的位置为插入的元素，原来该位置及后面的元素后移一位。
+	ListInsert_Sq(L,ListLength_Sq(L)+1,i*123-89);		//往最后插入,插入的位置为：在第二个参数的位置之前。也就是数组下标为[第二个参数的值减-1]的位置为插入的元素，原来该位置及后面的元素后移一位。
 	PrintList_Sq(L);
 
 
 
 	printf("\n-------测试ListDelete(&L,i,&e)----------\n");
-	ListDelete_Sq(&L,1,&e);			//删第一个
+	ListDelete_Sq(L,1,&e);			//删第一个
 	printf("\n%d---\n",e);
 	PrintList_Sq(L);
-	ListDelete_Sq(&L,7,&e);			//删中间的
+	ListDelete_Sq(L,7,&e);			//删中间的
 	printf("\n%d---\n",e);
 	PrintList_Sq(L);
-	ListDelete_Sq(&L,ListLength_Sq(L),&e);			//删最后一个
+	ListDelete_Sq(L,ListLength_Sq(L),&e);			//删最后一个
 	printf("\n%d---\n",e);
 	PrintList_Sq(L);
 
 /**
-	printf("\n-------测试ClearList(&L)----------\n");
-	if(ClearList_Sq(&L)){
+	printf("\n-------测试ClearList(L)----------\n");
+	if(ClearList_Sq(L)){
 		printf("清空操作成功\n");
 	}
 	
