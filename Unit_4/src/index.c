@@ -42,19 +42,22 @@ int Index(HString S,HString T,int pos){
  * 方法三：克努特-莫里斯-普拉特算法(又叫KMP算法)，可在O(m+n)的数量级上完成对串的模式匹配操作。其最大特点在于：在每一趟匹配过程中出现不想等的情况，不需要回溯i指针
  * 	 
  * 	 ***很多的文本模式处理都使用KMP算法。重点掌握，理解
+ * 	 重难点在next数组的求法。
  */
-
-void get_next(int **next,HString S){		//0，1表示相同的最大前缀和最大后缀的长度为0，2表示最大长度为1，依次类推
-	int i=1,j=0;	//i为next的下标,j为最大长度(next的值)。
-	(*next) = (int *)malloc(sizeof(int)*(S->size+1));	//*next[0] 不使用
-	(*next)[1] = 0;
-	while(i <= S -> size){
-		if(j == 0 || S->Base[i-1] == S -> Base[j-1]){
-			i++;
-			j++;
+void get_next(int **next,HString S){		//next数组：其值为S的每一位所拥有相同的最大子串长度。子串的范围为0到该位的长度-1，0表示没有相同的子串，1表示最大子串为1。。依次类推；下标0没有子串，设置为特殊位-1
+	int i,j;
+	(*next) = (int *)malloc(sizeof(int)*S->size);
+	(*next)[0] = -1;
+	i = 0;	//i表示两个含义：S的游标和next的游标
+	j = 0;	//j表示next[i]的值
+	while(i < S -> size){
+		if(j == -1 || S -> Base[i] == S -> Base[j]){
+			++i;
+			++j;
 			(*next)[i] = j;
 		}else{
-			j = (*next)[j];		//缩小j的范围。
+			//j--;	//j--是否也可以?  2018-4-21：从实验结果来说没问题，可是从理解上来说就不对了。
+			j = (*next)[j];
 		}
 	}
 }
@@ -63,9 +66,9 @@ int Index_KMP(HString S,HString T,int pos){
 	int i,j,*next;		//KMP的next数组	
 	if(pos + T -> size > S -> size +1 ) return -1;
 	get_next(&next,T);
-	i = j = 1;
+	i = j = 0;
 	while(i < S -> size && j < T -> size){
-		if(j == 0 || S -> Base[i-1] == T -> Base[j-1]){
+		if(j == -1 || S -> Base[i] == T -> Base[j]){
 			i++;
 			j++;
 		}else{
