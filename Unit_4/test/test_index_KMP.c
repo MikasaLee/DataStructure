@@ -2,8 +2,8 @@
 #include "../src/index.c"
 
 int main(int argc,char **args){
-	char* chars1="bacbababadababacam";
-	char* chars2="abaca";
+	char* chars1="aceacceaaaaaacccceeeeeacceaccdacceacdacceacccaccefaccc";
+	char* chars2="acceaccc";
 	HString str1,str2;
 	printf("\n--------------测试Index(HString S,HString T,int pos);------------------\n");
 	if(StrAssign(&str1,chars1) && StrAssign(&str2,chars2)){
