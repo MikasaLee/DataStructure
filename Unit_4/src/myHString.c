@@ -7,8 +7,8 @@ Status ensureCapacity(HString str,int capacity){	//私有方法，不再头文�
 	int newCapa;
 	if(!str) exit(OVERFLOW);
 	if(str -> capacity < capacity){
-		newCapa = str -> capacity + INCREASE > capacity? str -> capacity + INCREASE: capacity;
-		str -> Base = (ElemType *)realloc(str -> Base,newCapa);
+		newCapa = str -> capacity + HSTRING_INCREASE > capacity? str -> capacity + HSTRING_INCREASE: capacity;
+		str -> Base = (char *)realloc(str -> Base,newCapa);
 		if(!(str->Base)) return ERROR;
 		str -> capacity = newCapa;
 	}
@@ -19,10 +19,10 @@ Status ensureCapacity(HString str,int capacity){	//私有方法，不再头文�
 Status InitStr(HString *str){
 	(*str) = (hString *)malloc(sizeof(hString));
 	if((*str)){
-		(*str) -> Base = (ElemType *)malloc(sizeof(ElemType)*INIT_CAPACITY);
+		(*str) -> Base = (char *)malloc(sizeof(char)*HSTRING_INIT_CAPACITY);
 		if(!((*str) -> Base))	return ERROR;
 		(*str) -> size = 0;
-		(*str) -> capacity = INIT_CAPACITY;
+		(*str) -> capacity = HSTRING_INIT_CAPACITY;
 		return OK;
 	}
 	return ERROR;

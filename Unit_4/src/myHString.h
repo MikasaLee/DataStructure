@@ -9,11 +9,10 @@
 #include "stdlib.h"
 #include "../../Unit_1/src/myDefine.c"
 
-#define INIT_CAPACITY 10	//默认初始化容量大小
-#define INCREASE 5
-typedef char ElemType;
+#define HSTRING_INIT_CAPACITY 10	//默认初始化容量大小
+#define HSTRING_INCREASE 5
 typedef struct{
-	ElemType *Base;
+	char *Base;
 	int size;
 	int capacity;
 }hString,*HString;
