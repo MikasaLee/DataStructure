@@ -15,7 +15,12 @@
 
 #define LIST_INIT_SIZE 5 	//线性表存储空间的起始分配量
 #define LIST_INCREMENT 10 	//线性表存储空间的分配增量
+
+#ifndef ELEMTYPE
+#define ELEMTYPE
 typedef int ElemType;		//定义ElemType
+#endif
+
 typedef struct List{
 	ElemType *elem;		//存储空间基地址
 	int length;		//当前长度
