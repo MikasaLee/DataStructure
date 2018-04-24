@@ -1,0 +1,6 @@
+034 The Design and Analysis of Computer Algorithms
+050 Introduction to Numerical Analysis
+010 Introduction to Data Structures
+023 Fundamentals of Data Structures
+005 Computer Data Structures
+067 Numerical Analysis

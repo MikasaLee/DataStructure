@@ -144,7 +144,7 @@ Status NextElem_L(LinkList L,ElemType cur_e,ElemType *next_e){
 		(*next_e) = p -> data;
 		return OK;
 	}
-	printf("！！！NextElem_L():	表中不存在这个数据\n");
+	//printf("！！！NextElem_L():	表中不存在这个数据\n");
 	next_e = NULL;
 	return ERROR;
 }
