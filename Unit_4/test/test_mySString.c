@@ -3,8 +3,8 @@
 
 int main(int argc,char **args){
 	int i,j;
-	char *chars1="abcdefghijklmnopqrstuvwxyz",*chars2;
-	SString str1,str2;
+	char *chars1="abcdefghijklmnopqrstuvwxyz",*chars2,*chars3;
+	SString str1,str2,str3;
 	printf("\n---------测试StrAssign(SString str,char* chars)函数------------\n");
 	StrAssign(str1,chars1);
 	PrintString(str1);
@@ -62,10 +62,13 @@ int main(int argc,char **args){
 	StrAssign(str1,chars1);
 	chars2 = "a";
 	StrAssign(str2,chars2);
+	chars3 = "A";
+	StrAssign(str3,chars3);
+
 	PrintString(str1);
 	printf("\n\n");
-	Replace(str2,str2,str1);
-	PrintString(str2);
+	Replace(str1,str2,str3);
+	PrintString(str1);
 	
 	printf("\n---------测试StrInsert(SString S,int pos,SString T);函数------------\n");
 	chars1 = "dsfasdfasfdasdfsa ";

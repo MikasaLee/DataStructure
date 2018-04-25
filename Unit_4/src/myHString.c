@@ -154,7 +154,7 @@ Status Replace(HString *S,HString T,HString V){
 		SubString(&end,*S,i+T->size,StrLength(*S)-i-T->size+1);	//[i+T->size,StrLength(S)+1)
 		Concat(S,begin,V);
 		Concat(S,*S,end);
-		PrintString(*S);
+		//PrintString(*S);
 	}
 	//记得释放掉申请的临时内存
 	DestroyString(&begin);
