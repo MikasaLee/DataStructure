@@ -40,6 +40,10 @@ int main(int argc,char **args){
 	}else printf("%s < %s\n",chars1,chars2);
 
 	printf("\n---------测试Concat(SString T,SString S1,SString S2)函数------------\n");
+	chars1 = "abcde";
+	StrAssign(str1,chars1);
+	chars2 = "ABCDE";
+	StrAssign(str2,chars2);
 	PrintString(str1);
 	PrintString(str2);
 	Concat(str1,str1,str2);

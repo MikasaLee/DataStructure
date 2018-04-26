@@ -37,7 +37,7 @@ int StrCompare(SString str1,SString str2){
 		if(str1[i] != str2[i])	return str1[i] - str2[i];
 		i++;
 	}
-	return str1[i] - str2[i];
+	return str1[0] - str2[0];   //2018.4.26 Update: return str1[i] - str2[i]   change by return str1[0] - str2[0]; 
 }
 
 int StrLength(SString str){
@@ -90,13 +90,11 @@ Status Replace(SString S,SString T,SString V){
 	i = 1;
 	while((i+T[0]-1) <= S[0]){
 		SubString(temp,S,i,T[0]);
-		if(StrCompare(temp,T) == 0){
-			SubString(begin,S,1,i-1);
-			SubString(end,S,i+T[0],S[0]);
-			
+		if((j=StrCompare(temp,T)) == 0){
+			SubString(begin,S,1,i-1);       //[1,i)
+			SubString(end,S,i+T[0],S[0]-i-T[0]+1);   //[i+T[0],S[0]+1)
 			Concat(S,begin,V);
 			Concat(S,S,end);
-			S[0] = S[0] - T[0] + V[0];
 		}
 		i++;
 	}
