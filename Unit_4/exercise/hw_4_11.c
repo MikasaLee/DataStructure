@@ -31,6 +31,8 @@ HW_4_11 hw_4_11(StringType s,StringType t){
     return r;
 }
 
+#ifndef HW_4_19_C   //习题4.19会用到此文件
+#define HW_4_19_C
 int main(int argc,char **argv){
 
     StringType s,t;
@@ -46,3 +48,5 @@ int main(int argc,char **argv){
     }
     return 0;
 }
+
+#endif
