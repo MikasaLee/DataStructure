@@ -101,7 +101,7 @@ LinkString Concat(LinkString str1,LinkString str2){
     curor_str2 = str2 -> head;
     while(curor -> next!=NULL) curor = curor -> next;       //将游标移到最后一个节点。
     for(i = 0;i<StrLength(str2);i++){
-        if((i != 0) &&StrLength(str1) % NODE_LENGTH == 0){
+        if(StrLength(str1) % NODE_LENGTH == 0){
             curor -> next = (LinkNode)malloc(sizeof(linkNode));
             if(!(curor -> next)) exit(OVERFLOW);
             curor = curor -> next;
@@ -152,7 +152,8 @@ void PrintString(LinkString str){
         if((i !=0) && (i%NODE_LENGTH == 0)){
             curor = curor -> next;
         }
-        printf("%c",curor[i%NODE_LENGTH]);
+       // printf("\n");
+        printf("%c",curor -> data[i%NODE_LENGTH]);
     }
     printf("\n");
 }

@@ -39,9 +39,10 @@ int main(int argc,char **argv){
     }
 
     printf("\n----------------测试Concat()函数---------------------------\n");
-    chars2=NULL;
-    chars1="AAAAB";
-
+    chars2="abcdefghijklmnopqrstuvwxyz";
+    chars1=NULL;
+    //chars1 = "aaac";
+    //chars2 = "AAACB";
     if(StrAssign(&str1,chars1) && StrAssign(&str2,chars2)){
             if((str1 = Concat(str1,str2)) != NULL) PrintString(str1);
             else printf("Function of Concat : return NULL\n");
@@ -52,7 +53,7 @@ int main(int argc,char **argv){
     printf("\n----------------测试SubString()函数---------------------------\n");
     chars1 = "abcdefghijklmnopqrstuvwxyz";
     if(StrAssign(&str1,chars1)){
-            if((str2 = SubString(str1,1,26)) != NULL) PrintString(str2);
+            if((str2 = SubString(str1,3,6)) != NULL) PrintString(str2);
             else printf("Function of SubString : return NULL\n");
     }else{
         printf("Function of StrAssign : return ERROR!\n");
