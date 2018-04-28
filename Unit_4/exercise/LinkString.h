@@ -9,14 +9,17 @@
 #include "stdlib.h"
 #include "../../Unit_1/src/myDefine.c"
 
-#define NODE_LENGTH 1      //每个节点存放的字符的长度
+#define NODE_LENGTH 1       //每个节点存放的字符的长度
 
+#ifndef HW_4_28_C           //习题4.28需要重写linkNode类型
+#define HW_4_28_C
 typedef struct linkNode{
 
     char data[NODE_LENGTH];
     struct linkNode * next;
     
 }linkNode,*LinkNode;
+#endif
 
 typedef struct linkString{
     
