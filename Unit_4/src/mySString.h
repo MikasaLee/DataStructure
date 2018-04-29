@@ -14,7 +14,9 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "../../Unit_1/src/myDefine.c"
+#ifndef MAXSTRLEN
 #define MAXSTRLEN 25
+#endif
 typedef unsigned char SString[MAXSTRLEN+1];	//下标为0用来存放串的长度
 
 Status StrAssign(SString str,char* chars);	//生成一个值为chars的串T。

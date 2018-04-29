@@ -10,6 +10,7 @@ int main(int argc,char **args){
 	PrintString(str1);
 
 	printf("\n---------测试StrCopy(SString str,SString s)函数------------\n");
+	StrAssign(str1,"abcde");
 	StrCopy(str2,str1);
 	PrintString(str1);
 

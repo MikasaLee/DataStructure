@@ -21,7 +21,7 @@ Status StrCopy(SString str,SString s){
 		str[0] = 0;
 		return ERROR;
 	}
-	for(i = 0;i<s[0];i++){
+	for(i = 0;i<=s[0];i++){
 		str[i] = s[i];
 	}
 	return OK;
