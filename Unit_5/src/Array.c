@@ -56,58 +56,55 @@ Status DestroyArray(Array *A){
 
 
 Status Value(Array A,ElemType *e,...){	//注意所有向量都是基于下标值的，所以请注意算法,实在想不通就动笔画一画
-	va_list ptr;
-	int cursor = 0,temp = 0,i;
+	va_list ap;					//array pointer
+	int curor,temp = 0,i;
 	if(!A) return ERROR;
-	va_start(ptr,e);
-	for(i = 0;i<A -> dim;i++){
-		temp = va_arg(ptr,int);					//这里没有-1
-		if(temp < 0) return ERROR;
-		cursor+= (temp * A -> constants[i]);		//而bounds中存储的是长度。
+	va_start(ap,e);
+	if(Locate(A,ap,&curor)){
+		va_end(ap);
+		(*e) = A -> base[curor];
+		return OK;
 	}
-	va_end(ptr);
-	(*e) = A -> base[cursor];
-	return OK;
+	va_end(ap);
+	return ERROR;
 }
 
 Status Assign(Array A,ElemType e,...){  
-	va_list ptr;
-	int cursor = 0,temp = 0,i;
+	va_list ap;
+	int curor = 0,temp = 0,i;
 	if(!A) return ERROR;
-	va_start(ptr,e);
-	for(i = 0;i<A -> dim;i++){
-		temp = va_arg(ptr,int);					//这里没有-1
-		if(temp < 0) return ERROR;
-		cursor+= (temp * A -> constants[i]);		//而bounds中存储的是长度。
+	va_start(ap,e);
+	if(Locate(A,ap,&curor)){
+		va_end(ap);
+		A -> base[curor] = e;
+		return OK;
 	}
-	va_end(ptr);
-	A -> base[cursor] = e;
-	return OK;
+	va_end(ap);
+	return ERROR;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Status Locate(Array A,va_list ap,int *off){
+	int i,temp,curor;
+	
+	if(!A || !ap) exit(OVERFLOW);
+	for(i = 0,curor = 0;i<A ->dim;i++){
+		temp = va_arg(ap,int);
+		if(temp < 0 || temp > A -> bounds[i] - 1){
+			(*off) = -1;
+			return ERROR;
+		}
+		curor += temp*(A -> constants[i]);
+	}
+	(*off) = curor;
+	return OK;
+}
 
 void PrintArray(Array A){
 	int i,j,sum;
 	ElemType data;
 	if(!A){
 		printf("数组不存在!\n");
+		return ;
 	}
 	printf("数组的基址:%d\n数组的维数:%d\n",A -> base,A -> dim);
 	printf("数组的维界地址:");

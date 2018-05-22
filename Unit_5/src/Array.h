@@ -30,7 +30,7 @@ Status InitArray(Array *A,int dim, ...);	//若维数dim和随后的各维长度�
 Status DestroyArray(Array *A);				//销毁数组A
 Status Value(Array A,ElemType *e,...);		//A为n维数组，e为元素变量，随后是n个下标值。 若各下标不超界，则e赋值为所指定的A的元素值，并返回OK
 Status Assign(Array A,ElemType e,...);		//A是n维数组，e为元素变量，随后是n个下标值。 若下标不超界，则将e的值赋给所指定的A的元素，并返回OK
-
+Status Locate(Array A,va_list ap,int *off); //若ap中的各个参数给的正确，那么off为偏移量并且返回OK，否则off为-1并且返回-1
 void PrintArray(Array A);					//打印数组A
 #endif
 
