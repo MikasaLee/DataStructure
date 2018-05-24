@@ -45,10 +45,10 @@ Status SetTSMatrix(TSMatrix *M,ElemType **arr,int arr_mu,int arr_nu){
 	return OK;
 }
 
-Status DelDataTSMatrix(TSMatrix M,int i,int j){		//只有此位置上元素为0才删除
+Status DelDataTSMatrix(TSMatrix M,int i,int j){
 	int curor,temp;
 	for(curor = 1;(curor <= M -> tu) &&(i >= M -> data[curor] -> i);curor++){	//遍历已经存放的非零元
-		if((i == M -> data[curor] -> i) && (j == M -> data[curor] -> j) && (0 == M -> data[curor] ->e )){
+		if((i == M -> data[curor] -> i) && (j == M -> data[curor] -> j)){
 			free(M -> data[curor]);
 			for(temp = M -> tu;temp > curor;temp--)	M ->data[temp-1] = M -> data[temp];
 			--(M -> tu);
@@ -194,7 +194,9 @@ Status MultTSMatrix(TSMatrix M,TSMatrix N,TSMatrix *Q){
 				GetDataTSMatrix(*Q,row,cols,&temp_Q);
 				for(i = 0;i < M ->nu;i++){
 					GetDataTSMatrix(M,row,i,&temp_M);
+					if(temp_M == 0) continue;
 					GetDataTSMatrix(N,i,cols,&temp_N);
+					if(temp_N == 0) continue;
 					temp_Q += (temp_M * temp_N);
 				}
 				SetDataTSMatrix(*Q,row,cols,temp_Q);
