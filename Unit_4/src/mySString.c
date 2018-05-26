@@ -49,25 +49,30 @@ Status ClearString(SString str){
 	return OK;
 }
 
-Status Concat(SString T,SString S1,SString S2){
+Status Concat(SString T,SString S1,SString S2){				//2018.5.26：Concat和SubString操作应该建立一个临时字符串，而不能直接对T/sub进行操作，如果S2/S与T/sub指向的是同一个字符串的话，那么直接操作T/sub就会出错
 	int i;
-	for(i=0;i<S1[0];i++)	T[i] = S1[i];
-	for(i=1;i<=S2[0]&&(T[0]+i <= MAXSTRLEN);i++)	T[i+T[0]] = S2[i];
-	T[0] = T[0] + i -1 ;
+	SString temp;
+	for(i=0;i<=S1[0];i++)	temp[i] = S1[i];
+	for(i=1;i<=S2[0]&&(temp[0]+i <= MAXSTRLEN);i++)	temp[i+temp[0]] = S2[i];
+	temp[0] = temp[0] + i -1;
+	StrCopy(T,temp);	
 	return OK;
 }
 
 Status SubString(SString sub,SString S,int pos,int len){
 	int i;
+	int n =S[0];
+	SString temp;
 	if(pos < 1 || pos > S[0] || len < 0){
 		sub[0] = 0;	
 		return ERROR;
 	}
-	sub[0] = 0;
-	for(i=0;i<len&&(pos+i<=S[0]);i++){
-		sub[i+1] = S[i+pos];
-		sub[0]++;
+	temp[0] = 0;
+	for(i=0;i<len&&(pos+i<=n);i++){
+		temp[i+1] = S[i+pos];
+		temp[0]++;
 	}
+	StrCopy(sub,temp);	
 	return OK;
 }
 
