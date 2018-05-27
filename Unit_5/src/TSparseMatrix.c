@@ -141,20 +141,22 @@ Status CopyTSMatrix(TSMatrix M,TSMatrix *T){
 }
 
 
-Status AddTSMatrix(TSMatrix M,TSMatrix N,TSMatrix *Q){
+Status AddTSMatrix(TSMatrix M,TSMatrix N,TSMatrix *Q){	/**2018.5.27：不要直接对Q进行操作，如果Q是M/N **/
 	int curor;
 	ElemType temp_N,temp_Q;
+	TSMatrix temp;
 	if(M -> mu != N -> mu || M -> nu != N -> nu){
 		(*Q) = NULL;
 		return ERROR;
 	}
 	
-	if(CopyTSMatrix(M,Q)){
+	if(CopyTSMatrix(M,&temp)){
 		for(curor = 0; (curor < N -> tu)&&(N -> data[curor+1]);curor++){
 			GetDataTSMatrix(N,N -> data[curor+1] -> i,N -> data[curor+1]->j,&temp_N);
-			GetDataTSMatrix(*Q,N -> data[curor+1] -> i,N -> data[curor+1]->j,&temp_Q);
-			SetDataTSMatrix(*Q,N -> data[curor+1] -> i,N -> data[curor+1]->j,temp_Q+temp_N);
+			GetDataTSMatrix(temp,N -> data[curor+1] -> i,N -> data[curor+1]->j,&temp_Q);
+			SetDataTSMatrix(temp,N -> data[curor+1] -> i,N -> data[curor+1]->j,temp_Q+temp_N);
 		}
+		(*Q) = temp;
 		return OK;
 	}
 	exit(OVERFLOW);
@@ -163,17 +165,19 @@ Status AddTSMatrix(TSMatrix M,TSMatrix N,TSMatrix *Q){
 Status SubTSMatrix(TSMatrix M,TSMatrix N,TSMatrix *Q){
 	int curor;
 	ElemType temp_N,temp_Q;
+	TSMatrix temp;
 	if(M -> mu != N -> mu || M -> nu != N -> nu){
 		(*Q) = NULL;
 		return ERROR;
 	}
 	
-	if(CopyTSMatrix(M,Q)){
+	if(CopyTSMatrix(M,&temp)){
 		for(curor = 0;curor < N -> tu ;curor++){
 			GetDataTSMatrix(N,N -> data[curor+1] -> i,N -> data[curor+1]->j,&temp_N);
-			GetDataTSMatrix(*Q,N -> data[curor+1] -> i,N -> data[curor+1]->j,&temp_Q);
-			SetDataTSMatrix(*Q,N -> data[curor+1] -> i,N -> data[curor+1]->j,temp_Q-temp_N);
+			GetDataTSMatrix(temp,N -> data[curor+1] -> i,N -> data[curor+1]->j,&temp_Q);
+			SetDataTSMatrix(temp,N -> data[curor+1] -> i,N -> data[curor+1]->j,temp_Q-temp_N);
 		}
+		(*Q) = temp;
 		return OK;
 	}
 	exit(OVERFLOW);
