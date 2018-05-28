@@ -43,7 +43,7 @@ Status SetRLSMatrix(RLSMatrix *M,ElemType **arr,int arr_mu,int arr_nu){
 	int i,j;
 
 	if(!CreateRLSMatrix(M,arr_mu,arr_nu)) exit(OVERFLOW);
-//	printf("aaaa\n");
+	if(!arr) return OK;
 	for(i = 0;i<arr_mu;i++)
 		for(j = 0;j<arr_nu;j++)
 			if(arr[i][j] != 0)	SetDataRLSMatrix(*M,i,j,arr[i][j]);
