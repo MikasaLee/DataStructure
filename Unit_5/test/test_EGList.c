@@ -8,7 +8,8 @@
 #include "../src/EGList.c"
 
 Bool visit(AtomType);
-
+#ifndef MAIN
+#define MAIN
 int main(int argc,char **argv){
 	EGList L,g1,g2,g3;
 	SString S1,S2,S3;
@@ -70,7 +71,9 @@ int main(int argc,char **argv){
 
 	return 0;
 }
+#endif
 Bool visit(AtomType e){
 	printf("%c",e);
 	return OK;
 }
+
