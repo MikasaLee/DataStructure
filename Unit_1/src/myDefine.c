@@ -1,8 +1,8 @@
 #ifndef MYDEFINE_H
 #define MYDEFINE_H
-#endif
 
 #include "stdio.h"
+#include "stdlib.h"
 #define TRUE 1
 #define FALSE 0
 #define OK 1
@@ -22,3 +22,4 @@ typedef int Bool;
  * 判定行结束：eoln(文件变量) 或eoln
  */
 
+#endif
