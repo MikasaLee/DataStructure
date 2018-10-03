@@ -8,7 +8,9 @@
 #define OK 1
 #define ERROR 0
 #define INFEASIBLE -1
+#ifndef OVERFLOW 
 #define OVERFLOW -2
+#endif
 typedef int Status;
 typedef int Bool;
 /**
