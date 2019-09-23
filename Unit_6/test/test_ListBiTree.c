@@ -13,7 +13,7 @@
 
 int main(int argc,char **argv){
 	LBiTree T = NULL;
-	ElemType *e = "ABCDEF#G#HI#J";
+	ListElemType_Bt *e = "ABCDEF#G#HI#J";
 	printf("\n----------测试CreateBiTree_L()------------\n");
 	if(CreateBiTree_L(&T,e,0,13)){
 		printf("\n----------测试PreOrderTraverse()------------\n");

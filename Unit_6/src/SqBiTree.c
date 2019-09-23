@@ -22,7 +22,7 @@ Status DestroyBiTree_Sq(SqBiTree T){	//销毁二叉树T
 	return OK;
 }
 
-Status CreateBiTree_Sq(SqBiTree T,ElemType *define,int len){	//按defin构造二叉树T
+Status CreateBiTree_Sq(SqBiTree T,SqElemType_Bt *define,int len){	//按defin构造二叉树T
 	int i;
 	if(InitBiTree_Sq(T)){
 		for(i = 0;i < len;i++){
@@ -38,7 +38,7 @@ Status CreateBiTree_Sq(SqBiTree T,ElemType *define,int len){	//按defin构造二
 	return ERROR;
 }
 
-Node CreateNode_Sq(ElemType data){
+Node CreateNode_Sq(SqElemType_Bt data){
 	Node n = NULL;
 	if((data!='#') && ((n = (Node)malloc(sizeof(node)))!=NULL)){	//用#表示null节点
 		n -> data = data;
@@ -91,11 +91,11 @@ int getPosByNode(SqBiTree T,Node n){
 	return i;
 }
 
-ElemType Value_Sq(SqBiTree T,Node n){	//返回二叉树T中n节点的data
+SqElemType_Bt Value_Sq(SqBiTree T,Node n){	//返回二叉树T中n节点的data
 	int i = getPosByNode(T,n);
 	return i == MAX_TREE_SIZE?-1:T[i] -> data;
 }
-Status Assign_Sq(SqBiTree T,Node n,ElemType e){	//将二叉树中n节点的值设置为e
+Status Assign_Sq(SqBiTree T,Node n,SqElemType_Bt e){	//将二叉树中n节点的值设置为e
 	int i = getPosByNode(T,n);
 	if(i == MAX_TREE_SIZE){
 		return ERROR;

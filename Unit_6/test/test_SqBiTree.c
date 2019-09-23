@@ -14,7 +14,7 @@
 int main(int argc,char **argv){
 
 	SqBiTree T;
-	ElemType *e = "ABCDEF#G#HI#J";
+	SqElemType_Bt *e = "ABCDEF#G#HI#J";
 	printf("\n----------测试CreateBiTree_Sq()------------\n");
 	if(CreateBiTree_Sq(T,e,13)){
 		printf("\n----------测试PreOrderTraverse()------------\n");

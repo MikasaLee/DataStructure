@@ -32,7 +32,7 @@ Status DestroyBiTree_L(LBiTree *T){	//销毁二叉树T
 	return OK;
 }
 
-Status CreateBiTree_L(LBiTree *T,ElemType *define,int i,int len){
+Status CreateBiTree_L(LBiTree *T,ListElemType_Bt *define,int i,int len){
 	Node p;
 	if(*T) free(*T);
 	(*T) = NULL;
@@ -44,7 +44,7 @@ Status CreateBiTree_L(LBiTree *T,ElemType *define,int i,int len){
 	return OK;
 }
 
-Node CreateNode_L(ElemType data){			//创建一个Node，其值为data;
+Node CreateNode_L(ListElemType_Bt data){			//创建一个Node，其值为data;
 	Node p = NULL;
 	if(data != '#'){
 		p = (Node)malloc(sizeof(node));
@@ -75,10 +75,10 @@ Node Root_L(LBiTree T){				//返回二叉树T的根
 	return T;
 }
 
-ElemType Value_L(Node n){	//返回n节点的data
+ListElemType_Bt Value_L(Node n){	//返回n节点的data
 	return n -> data;
 }
-Status Assign_L(Node n,ElemType e){	//将二叉树中n节点的值设置为e
+Status Assign_L(Node n,ListElemType_Bt e){	//将二叉树中n节点的值设置为e
 	n -> data = e ;
 	return OK;
 }

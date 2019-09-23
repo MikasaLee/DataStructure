@@ -18,14 +18,14 @@
 
 #include "../../Unit_1/src/myDefine.c"
 
-#ifndef ELEMTYPE
-#define ELEMTYPE
-typedef char ElemType;
+#ifndef SQELEMTYPE_BT
+#define SQELEMTYPE_BT
+typedef char SqElemType_Bt;
 #endif
 
 #define MAX_TREE_SIZE 100		//二叉树的最大节点数
 typedef struct{
-	ElemType data;
+	SqElemType_Bt data;
 }node,*Node;					//节点
 
 typedef Node SqBiTree[MAX_TREE_SIZE];		//0号单元存放根节点，
@@ -33,14 +33,14 @@ typedef Node SqBiTree[MAX_TREE_SIZE];		//0号单元存放根节点，
 //------------------基本操作-------------------------------
 Status InitBiTree_Sq(SqBiTree T);		//构造空二叉树T
 Status DestroyBiTree_Sq(SqBiTree T);	//销毁二叉树T
-Status CreateBiTree_Sq(SqBiTree T,ElemType *define,int len);	//按长度为len的define构造二叉树T
-Node CreateNode_Sq(ElemType data);			//得到一个Node，其值为data
+Status CreateBiTree_Sq(SqBiTree T,SqElemType_Bt *define,int len);	//按长度为len的define构造二叉树T
+Node CreateNode_Sq(SqElemType_Bt data);			//得到一个Node，其值为data
 Status ClearBiTree_Sq(SqBiTree T);		//清空二叉树T
 Bool BiTreeEmpty_Sq(SqBiTree T);		//若T为空二叉树，返回TRUE；否则返回FALSE
 int BiTreeDepth_Sq(SqBiTree T);		//返回二叉树T的深度
 Node Root_Sq(SqBiTree T);				//返回二叉树T的根
-ElemType Value_Sq(SqBiTree T,Node n);	//返回二叉树T中n节点的data
-Status Assign_Sq(SqBiTree T,Node n,ElemType e);	//将二叉树中n节点的值设置为e
+SqElemType_Bt Value_Sq(SqBiTree T,Node n);	//返回二叉树T中n节点的data
+Status Assign_Sq(SqBiTree T,Node n,SqElemType_Bt e);	//将二叉树中n节点的值设置为e
 Node Parent_Sq(SqBiTree T,Node n);		//返回二叉树T中n节点的父节点
 Node LeftChild_Sq(SqBiTree T,Node n);	//返回二叉树T中n节点的左孩子
 Node RightChild_Sq(SqBiTree T,Node n);	//返回二叉树T中n节点的右孩子
