@@ -12,7 +12,7 @@
 #ifndef LISTBITREE_C
 #define LISTBITREE_C
 
-#include <math.h>
+#include "math.h"
 #include "./ListBiTree.h"
 
 Status InitBiTree_L(LBiTree *T){		//构造空二叉树T
@@ -159,7 +159,6 @@ Bool PostOrderTraverse(LBiTree T,Status Visit(Node node)){	//后序遍历二叉�
 }	
 
 Bool LevelOrderTraverse(LBiTree T,Status Visit(Node node)){	//层序遍历二叉树T，对每一个节点调用visit()函数，若有一个调用失败返回false。
-	if(!T) return ERROR;
 	if(!T) return ERROR;
 	int size,i,j; //size = 2<sup>depth</sup>-1;
 	Node *capacity,p = T;
