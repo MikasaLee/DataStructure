@@ -31,7 +31,7 @@ typedef int BiSortElemType;		//以后就算是char也用int类型 ,<The C Progra
 
 typedef struct node{
 	BiSortElemType	data;			//数据
-	struct node *lchild,*rchile;		//左右孩子指针
+	struct node *lchild,*rchild;		//左右孩子指针
 }node,*Node;
 
 typedef node biSortTree;
@@ -41,15 +41,19 @@ typedef Node BiSortTree;
 //--------------------基本操作----------------------------------------
 Status InitBiSortTree(BiSortTree *T);		//构造空二叉排序树
 Status DestroyBiSortTree(BiSortTree *T);	//销毁二叉排序树T
-Status CreateBiSortTree(BiSortTree *T,BiSortElemType []define,int i,int len);	//按长度为len的define构造二叉排序树T(逐点插入法,关键是InsertNode函数)
+Status CreateBiSortTree(BiSortTree *T , BiSortElemType datas[] , int len);	//按长度为len的define构造二叉排序树T(逐点插入法,关键是InsertNode函数)
 Node CreateNode(BiSortElemType data);			//创建一个Node，其值为data
 Bool BiSortTreeEmpty(BiSortTree T);		//若T为空二叉排序树，返回TRUE；否则返回FALSE
 int BiSortTreeDepth(BiSortTree T);		//返回二叉排序树T的深度
 Node Root(BiSortTree T);				//返回二叉排序树T的根
 BiSortElemType Value(Node n);	//返回二叉排序树T中n节点的data
+Node Parent(BiSortTree T,Node p);	//得到p节点的父节点
 
 //三个主要的问题：插入/删除/查找一个节点
-Bool InsertBiSortNode(BiSortTree root,BiSortElemType e);	//插入一个节点
+Bool InsertBiSortNode(BiSortTree root,BiSortElemType e);	//插入一个节点,递归算法
+
+Bool InsertBiSortNode2(BiSortTree root,BiSortElemType e);	//插入一个节点，非递归算法
+
 Bool DeleteBiSortNode(BiSortTree root,BiSortElemType e);	//删除一个节点
 Node SearchBiSortNode(BiSortTree root,BiSortElemType e);	//查找一个节点
 
