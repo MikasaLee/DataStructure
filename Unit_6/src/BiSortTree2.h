@@ -43,7 +43,8 @@ Bool InsertBiSortNode(BiSortTree *T,BiSortElemType e);	//插入一个节点,递�
 Bool InsertBiSortNode2(BiSortTree *T,BiSortElemType e);	//插入一个节点，非递归算法
 
 Bool DeleteBiSortNode(BiSortTree *T,BiSortElemType e);	//删除一个节点
-Node SearchBiSortNode(BiSortTree T,BiSortElemType e);	//查找一个节点
+Node SearchBiSortNode(BiSortTree T,BiSortElemType e);	//查找一个节点,递归算法
+Node SearchBiSortNode2(BiSortTree T,BiSortElemType e);	//查找一个节点，非递归算法
 
 Status InOrderTraverse(BiSortTree T,Bool Visit(Node node));	//遍历有一个中序遍历就够了
 
