@@ -16,14 +16,14 @@
 
 #include "./BiSortTree2.c"		//版本2的二叉排序树
 
-Status PreOrderTraverse1(BiSortTree T,Bool Visit(Node node));	//先序
-Status InOrderTraverse1(BiSortTree T,Bool Visit(Node node));	//中序
-Status PostOrderTraverse1(BiSortTree T,Bool Visit(Node node));	//后序
+void PreOrder1(BiSortTree T,Bool Visit(Node node));	//先序
+void InOrder1(BiSortTree T,Bool Visit(Node node));	//中序
+void PostOrder1(BiSortTree T,Bool Visit(Node node));	//后序
 
 
-Status PreOrderTraverse2(BiSortTree T,Bool Visit(Node node));	//先序
-Status InOrderTraverse2(BiSortTree T,Bool Visit(Node node));	//中序
-Status PostOrderTraverse2(BiSortTree T,Bool Visit(Node node));	//后序
-Status LevelOrderTraverse2(BiSortTree T,Bool Visit(Node node));	//层序
+void PreOrder2(BiSortTree T,Bool Visit(Node node));	//先序
+void InOrder2(BiSortTree T,Bool Visit(Node node));	//中序
+void PostOrder2(BiSortTree T,Bool Visit(Node node));	//后序
+void LevelOrder2(BiSortTree T,Bool Visit(Node node));	//层序
 
 #endif
