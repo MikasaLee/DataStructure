@@ -14,7 +14,7 @@
 
 #include "stdio.h"
 #include "stdlib.h"
-
+#define DEFAULT_LINE 10
 
 int main(int argc,char **argv){
 
@@ -38,35 +38,26 @@ int main(int argc,char **argv){
 			}
 			line = line*10+temp[i]-'0';
 		}
-	}
+	}else line = DEFAULT_LINE;
 
 	//处理文件
 	if( (fp = fopen(filename,"r")) == NULL ){
 		printf("error: file %s open error!\n",filename);
 		return 1;
 	}
-/**
-	fstart = fp;
-	printf("fstart:%d ",fstart);
-	printf("fp:%d\n",fp);
+
 	// 定位到倒数第n行的开头
-	printf("fseek:%d\n",fseek(fp,0,SEEK_END));		//定位到文件最后
-	
-	printf("fstart:%d ",fstart);
-	printf("fp:%d\n",fp);
-**/
-	// 定位到倒数第n行的开头
-	fseek(fp,-1,SEEK_END);		//定位到文件最后
+	fseek(fp,0,SEEK_END);		//定位到文件最后,fseek函数改变的并不是fp的指针，而是FILE结构体中的一个属性：文件偏移量（简单的说就是文件光标） fseek和ftell的定位都是依靠该属性实现的，而fp的指向始终不变
 	offset = ftell(fp);
 
-	while(offset > 0){	//定位到倒数第n行开头或者n比文件总行数大时定位到文件头.
+	while(offset > 0 && line >= 0){	//定位到倒数第n行开头或者n比文件总行数大时定位到文件头,注意这里line是大于等于0 因为定位到文件最后是文件的最后一样最后一个字符，也就是该行的换行符，所以要先把这个换行符减掉 所以line多循环一次
 		//if(fgetc(fp) == '\n') --line;		//找见一个换行符line减一
-		if((c = fgetc(fp)) == '\n') if(--line == 0) break;		//找见一个换行符line减一
-		fseek(fp,-2,SEEK_CUR);	//从后往前找,-2是因为fgetc会将光标后移一位
-		offset = ftell(fp);
+		fseek(fp,--offset,SEEK_SET);	//光标往前移一个字节
+		if((c = fgetc(fp)) == '\n')
+			--line;		//找见一个换行符line减一
 	}
-	//while((c = fgetc(fp) != EOF)) printf("%c",c);		//输出后n行,这个不行？？？？
-	while(fgets(str,sizeof(str),fp)) printf("%s",str);		//输出后n行，这个可以？？？
+	while((c = fgetc(fp) != EOF)) printf("%c",c);		//输出后n行,这个不行？？？？
+	//while(fgets(str,sizeof(str),fp)) printf("%s",str);		//输出后n行，这个可以？？？
 
 	fclose(fp);
 	return 0;
