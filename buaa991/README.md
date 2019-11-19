@@ -1,4 +1,6 @@
-# 北航991历年C语言部分真题的相关代码
+# 北航软件历年C语言部分真题的相关代码
+
+## 非991年份
 + 2004(891) tail命令：tail.c
 + 2005(891) 约瑟夫问题：Josephus.c
 + 2005(891) change命令：change.c
@@ -9,3 +11,13 @@
 + 2007(921) outprime命令：outprime.c
 + 2010(993) sum命令：sum.c
 + 2010(993) tail命令：参考2004的tail命令(tail.c)
+
+## 991年份
++ 2008(991) 输出最后k个数：printLastK.c
++ 2008(991) 非递归判断是否为二叉排序树：isBiSortTree.c
++ 2008(991) scanf%2d：check55.c
++ 2008(991) 函数指针：check57.c
++ 2008(991) 字符数组strlen：check59.c
++ 2008(991) 强制类型转换：check63.c
++ 2008(991) 复制部分串：subStrCpy.c
++ 2008(991) replace命令：replace.c
