@@ -26,3 +26,4 @@
 + 2011(991) 右移数组：moveArray.c
 + 2012(991) 五.7：checkScanf.c
 + 2012(991) 删除字符：deleteChar.c
++ 2013(991) 递增排序：sort.c
