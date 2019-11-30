@@ -27,3 +27,5 @@
 + 2012(991) 五.7：checkScanf.c
 + 2012(991) 删除字符：deleteChar.c
 + 2013(991) 递增排序：sort.c
++ 2013(991) 删除最小值：deleteMin.c
++ 2013(991) 最长公共单词：maxWord.c
