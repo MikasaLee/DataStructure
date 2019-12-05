@@ -33,3 +33,5 @@
 + 2015(991) 输入字符串并找出最大字符：inputAndMax.c
 + 2016(991) strcmp_nc：strcmp_nc.c
 + 2016(991) 平均成绩和最高成绩：score.c
++ 2017(991) psum：psum.c
++ 2017(991) stoi：stoi.c
