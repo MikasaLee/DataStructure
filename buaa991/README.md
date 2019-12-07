@@ -35,3 +35,7 @@
 + 2016(991) 平均成绩和最高成绩：score.c
 + 2017(991) psum：psum.c
 + 2017(991) stoi：stoi.c
++ 2018(991) freqs：(2014 strCount.c)
++ 2018(991) FASTQ文件：fastq.c
++ 2019(991) 星期几：get_weekday.c
++ 2019(991) 变位词：word.c
